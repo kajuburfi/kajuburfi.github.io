@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../style.css" class="style">
+    <title>Question 24</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="center titleMain" id="titleMain">Question 24</div>
+      <div class="center quote" id="quote" style="cursor: auto;">RC Railgun</div>
+    </div>
+
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <h4 id="q-24.-an-infinitely-long-pi-shaped-conductor-as-shown-is-fixed-horizontally-on-a-flat-surface.-a-capacitor-of-capacitance-c-is-connected-as-shown.-a-straight-conducting-rod-of-length-l-mass-m-and-resistance-r-is-placed-parallel-to-the-line-joining-the-capacitor-as-shown.-assume-frictionless-contact-between-the-rod-and-the-pi-shaped-conductor.-a-constant-magnetic-field-of-magnitude-b-is-set-up-vertically-into-the-plane.-the-rod-is-initially-given-a-velocity-v_0-towards-the-right-by-an-impulsive-force.-find-the-velocity-of-the-rod-and-the-charge-on-the-capacitor-as-a-function-of-time.">Q 24. An infinitely long <span class="math display">\(\Pi\)</span> shaped conductor as shown is fixed horizontally on a flat surface. A capacitor of capacitance <span class="math display">\(C\)</span> is connected as shown. A straight conducting rod of length <span class="math display">\(l\)</span>, mass <span class="math display">\(m\)</span> and resistance <span class="math display">\(R\)</span> is placed parallel to the line joining the capacitor as shown. Assume frictionless contact between the rod and the <span class="math display">\(\Pi\)</span> shaped conductor. A constant magnetic field of magnitude <span class="math display">\(B\)</span> is set up vertically, into the plane. The rod is initially given a velocity <span class="math display">\(v_0\)</span> towards the right by an impulsive force. Find the velocity of the rod and the charge on the capacitor as a function of time. Neglect the magnetic fields produced by the wires themselves.</h4>
+    <p align="center">
+    <img align="center" src="https://i.upmath.me/svg/%5Cbegin%7Bcircuitikz%7D%0A%5Ccolor%7Bwhite%7D%3B%0A%5Cdraw%20(0%2C0)%20to%20%5Bcapacitor%2C%20l_%3D%24C%24%5D%20(0%2C2)%3B%0A%5Cdraw%20(0%2C0)%20--%20(4%2C0)%3B%0A%5Cdraw%20(0%2C2)%20--%20(4%2C2)%3B%0A%5Cdraw%5Bdensely%20dashed%5D%20(4%2C0)%20--%20(5%2C0)%3B%0A%5Cdraw%5Bdensely%20dashed%5D%20(4%2C2)%20--%20(5%2C2)%3B%0A%5Cdraw%5Bvery%20thick%5D%20(3%2C-.25)%20--%20(3%2C2.25)%3B%0A%5Cdraw%20(3.85%2C2.35)%20node%20%7B%24l%2C%20m%2C%20R%24%7D%3B%0A%5Cdraw%5B-%3E%5D%20(3%2C1)%20--%20(3.5%2C1)%3B%0A%5Cdraw%20(4%2C1)%20node%20%7B%24v_0%24%7D%3B%0A%5Cdraw%20(2%2C1)%20node%20%7B%24%5Cotimes%20%5Cvec%7BB%7D%24%7D%3B%0A%5Cend%7Bcircuitikz%7D%0A" alt="\begin{circuitikz}
+    \color{white};
+    \draw (0,0) to [capacitor, l_=$C$] (0,2);
+    \draw (0,0) -- (4,0);
+    \draw (0,2) -- (4,2);
+    \draw[densely dashed] (4,0) -- (5,0);
+    \draw[densely dashed] (4,2) -- (5,2);
+    \draw[very thick] (3,-.25) -- (3,2.25);
+    \draw (3.85,2.35) node {$l, m, R$};
+    \draw[-&gt;] (3,1) -- (3.5,1);
+    \draw (4,1) node {$v_0$};
+    \draw (2,1) node {$\otimes \vec{B}$};
+    \end{circuitikz}
+    " />
+    </p>
+    <hr />
+    <h4 id="answer">Answer:</h4>
+    <p>From Faraday’s law, we can write:</p>
+    <p><span class="math display">\[\dot{q}R + \frac{q}{C} = vBl\tag1\]</span></p>
+    <p>Where <span class="math display">\(v\)</span> is the velocity of the rod at any general instant.</p>
+    <p>And from the Lorentz force and Newton’s law,</p>
+    <p><span class="math display">\[F = -iBl \Longleftrightarrow \dot{v} = \frac{-\dot{q}Bl}{m}\tag2\]</span></p>
+    <p>Differentiating eq (1), and substituting <span class="math display">\(\dot{v}\)</span> from eq (2) into it gives us</p>
+    <p><span class="math display">\[\ddot{q}R + \dot{q} \left( \frac{1}{C} + \frac{B^2l^2}{m} \right) = 0\tag3\]</span></p>
+    <p>For simplicity let’s define:</p>
+    <p><span class="math display">\[\kappa \overset{\text{def}}{=}\frac{1}{C} + \frac{B^2l^2}{m}\]</span></p>
+    <p>Solving the differential eq (3),</p>
+    <p><span class="math display">\[q = C_1 e^{\alpha_1 t} + C_2 e^{\alpha_2 t}\]</span></p>
+    <p>Where <span class="math display">\(\alpha_1\)</span> and <span class="math display">\(\alpha_2\)</span> are the roots of the equation <span class="math display">\(D^2R+D\kappa = 0\)</span>. Substituting boundary condition, i.e. at <span class="math display">\(t=0\)</span>, charge on capacitor <span class="math display">\(q=0\)</span>, and initial current <span class="math display">\(i_0 = \frac{v_0 Bl}{R}\)</span>, we get:</p>
+    <p><span class="math display">\[q = \frac{v_0 Bl}{\kappa}\left( 1 - e^{-\frac{\kappa}{R} t} \right)\tag4\]</span></p>
+    <p>Here, we see that <span class="math display">\[\tau \overset{\text{def}}{=} R / \kappa\]</span> plays the role of time constant.</p>
+    <p>Note that the final charge on the capacitor, at <span class="math display">\(t=\infty\)</span>:</p>
+    <p><span class="math display">\[q\big|_{t=\infty} = \frac{v_0  B l}{\kappa}\]</span></p>
+    <p>Further, current as a function of time:</p>
+    <p><span class="math display">\[i = \dot{q} = \frac{v_0 B l R }{\kappa^2} e^{-t/\tau}\tag5\]</span></p>
+    <p>Substituting this is eq (2), and integrating with appropriate limits, we get velocity of the rod as a function of time,</p>
+    <p><span class="math display">\[v = \frac{v_0 B^2 l^2 R^2}{\kappa^3 m} \left( 1 - e^{-t/\tau}\right) + v_0\tag6\]</span></p>
+    <p>Further, we can say that:</p>
+    <p><span class="math display">\[P = i^2 R\]</span></p>
+    <p><span class="math display">\[\implies \int dH = \frac{v_0^2B^2l^2R^3}{\kappa^4} \int_0^\infty e^{-2t/\tau}dt\]</span></p>
+    <p><span class="math display">\[\implies H = \frac{v_0^2B^2l^2R^4}{2\kappa^5}\tag7\]</span></p>
+    <p>This is the total heat lost due to current in the resistor(rod).</p>
+    <p>We can also find the final kinetic energy of the rod.</p>
+    <p><span class="math display">\[K_{f,rod} = \frac{1}{2} m v_0^2 \left( \frac{B^2l^2R^2}{\kappa^3m} + 1\right) ^2\tag8\]</span></p>
+    <p>Also, The final energy stored in the capacitor,</p>
+    <p><span class="math display">\[E_{capacitor} = \frac{q^2}{2C}\]</span></p>
+    <p><span class="math display">\[E = \frac{v_0^2B^2l^2}{2C\kappa^2}\tag9\]</span></p>
+    <hr />
+
+  </body>
+</html>
+<script type="text/javascript" src="../themeing.js"></script>

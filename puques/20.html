@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../style.css" class="style">
+    <title>Question 20</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="center titleMain" id="titleMain">Question 20</div>
+      <div class="center quote" id="quote" style="cursor: auto;">Self heating</div>
+    </div>
+
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <h4 id="q-20.-find-the-temperature-of-a-resistor-due-to-self-heating-as-a-function-of-time.-consider-the-resistor-to-be-of-resistance-rho_0-length-l_0-and-cross-sectional-area-a_0-at-temperature-t_0.-assume-the-resistor-to-be-connected-to-an-ideal-cell-of-constant-electromotive-force-mathcale.-consider-its-mass-to-be-m-and-its-specific-heat-capacity-to-be-s.-assume-eta-to-be-the-fraction-of-heat-the-is-used-by-the-resistor-to-heat-up-and-the-rest1-eta-is-lost-to-surroundings.-its-coefficients-of-linear-thermal-expansion-is-k-and-its-thermal-coefficient-of-resistivity-to-be-alpha.-assume-it-to-be-an-isotropic-material.">Q 20. Find the temperature of a resistor due to self heating as a function of time. Consider the resistor to be of resistance <span class="math display">\(\rho_0\)</span>, length <span class="math display">\(l_0\)</span> and cross sectional area <span class="math display">\(A_0\)</span> at temperature <span class="math display">\(T_0\)</span>. Assume the resistor to be connected to an ideal cell of constant electromotive force, <span class="math display">\(\mathcal{E}\)</span>. Consider its mass to be <span class="math display">\(m\)</span> and its specific heat capacity to be <span class="math display">\(s\)</span>. Assume <span class="math display">\(\eta\)</span> to be the fraction of heat the is used by the resistor to heat up, and the rest(<span class="math display">\(1-\eta\)</span>) is lost to surroundings. Its coefficients of linear thermal expansion is <span class="math display">\(K\)</span>, and its thermal coefficient of resistivity to be <span class="math display">\(\alpha\)</span>. Assume it to be an isotropic material.</h4>
+    <hr />
+    <h4 id="idea">Idea:</h4>
+    <p align="center">
+    <img align="center" src="https://i.upmath.me/svg/%5Cbegin%7Bcircuitikz%7D%0A%5Cdraw%5Bwhite%5D%0A(0%2C0)%20to%5Bbattery%2Cl%3D%5Cmathcal%7BE%7D%5D%20(4%2C0)%0A(0%2C0)%20--%20(0%2C2)%20to%5Bresistor%2C%20l%3DR%5D%20(4%2C2)%0A(4%2C2)%20--%20(4%2C0)%3B%0A%5Cend%7Bcircuitikz%7D" alt="\begin{circuitikz}
+    \draw[white]
+    (0,0) to[battery,l=\mathcal{E}] (4,0)
+    (0,0) -- (0,2) to[resistor, l=R] (4,2)
+    (4,2) -- (4,0);
+    \end{circuitikz}" />
+    </p>
+    <p>By the definition, WKT,</p>
+    <p><span class="math display">\[\rho = \rho_0 e^{\alpha \Delta T}\]</span></p>
+    <p><span class="math display">\[\implies R = \frac{\rho_0 e^{\alpha \Delta T} \cdot l_0 e^{K \Delta T}}{A_0 e^{2K \Delta T}}\]</span></p>
+    <p><span class="math display">\[\implies R = R_0 e^{(\alpha - K) \Delta T}\]</span></p>
+    <p>Where, <span class="math display">\(R_0 = \frac{\rho_0 l_0}{A_0}\)</span>.</p>
+    <p>WKT,</p>
+    <p><span class="math display">\[P = i \mathcal{E} \implies \eta{\mathcal{E}^2 \over R} = \frac{dQ}{dt} = m s \frac{dT}{dt}\]</span></p>
+    <p>Hence, we get:</p>
+    <p><span class="math display">\[T = T_0 + \frac{1}{\alpha-K} \ln \left( 1+ \frac{\eta (\alpha - K) \mathcal{E}^2 t}{m s R_0} \right)\]</span></p>
+    <p>Further,</p>
+    <p><span class="math display">\[R = R_0 e^{(\alpha - K) \Delta T} = R_0 \left( 1+ \frac{\eta (\alpha - K) \mathcal{E}^2 t}{m s R_0} \right)\]</span></p>
+    <p>Note, here we assume the the melting point of the resistor is basically infinite. It does not melt. Hence, its temperature at time, <span class="math display">\(t = \infty\)</span>, is also infinity. So is its resistance, and the current is zero. So, we can say it attains a steady state when time, <span class="math display">\(t = \infty\)</span>.</p>
+    <hr />
+
+  </body>
+</html>
+<script type="text/javascript" src="../themeing.js"></script>

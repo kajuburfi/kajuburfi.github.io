@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../style.css" class="style">
+    <title>Question 6</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="center titleMain" id="titleMain">Question 6</div>
+      <div class="center quote" id="quote" style="cursor: auto;">An amusing pressure profile.</div>
+    </div>
+
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <h4 id="q6.-consider-a-hollow-frustum-closed-on-both-ends.-an-ideal-gas-of-molar-mass-m-and-temperature-t-is-inside-it.-it-is-rotated-about-its-short-end-with-constant-angular-velocity-omega.-the-radius-on-its-left-end-is-a-and-its-right-end-is-b.-pressure-on-its-left-end-is-p_0.-the-total-length-is-l.-find-pressure-profile.-px">Q6. Consider a hollow frustum, closed on both ends. An ideal gas of molar mass M and temperature T is inside it. It is rotated about its short end with constant angular velocity <span class="math display">\(\omega\)</span>. The radius on its left end is <span class="math display">\(a\)</span>, and its right end is <span class="math display">\(b\)</span>. Pressure on its left end is <span class="math display">\(P_0\)</span>. The total length is <span class="math display">\(L\)</span>. Find pressure profile. (<span class="math display">\(P(x)\)</span>)</h4>
+    <hr />
+    <h4 id="idea">Idea:</h4>
+    <p>Each small part has circular motion. Hence, we can apply the following formula for an infinitesimally small section and integrate over it to find the pressure profile</p>
+    <p><span class="math display">\[F = m R \omega^2\tag1\]</span></p>
+    <p>We also have the ideal gas equation, <span class="math display">\(PV = nRT\)</span> with us, but we shall use its modified form</p>
+    <p><span class="math display">\[PM = \rho R T\tag2\]</span></p>
+    <hr />
+    <h4 id="solution">Solution:</h4>
+    <p><img src="./docs/6_1.png" /></p>
+    <p>We shall first solve the question generally for any <span class="math display">\(A(x)\)</span>.</p>
+    <p>Using eq. (1), we have,</p>
+    <p><span class="math display">\[(P+dP)(A+dA) - PA = (dm) x \omega^2\tag3\]</span></p>
+    <p><span class="math display">\[AdP + PdA = \rho A x (dx) \omega^2\]</span></p>
+    <p>Substituting <span class="math display">\(\rho = \frac{PM}{RT}\)</span> from (2),</p>
+    <p><span class="math display">\[AdP + PdA = \frac{PM}{RT} A \omega^2 x dx\]</span></p>
+    <p><span class="math display">\[\implies \int_{P_0}^{P} \frac{dP}{P} + \int_{A_0}^{A} \frac{dA}{A} = \frac{M\omega^2}{RT} \int_{0}^{x} x dx\]</span></p>
+    <p><span class="math display">\[\ln \left( \frac{PA}{P_0 A_0} \right) = \frac{M \omega^2 x^2}{2RT}\]</span></p>
+    <p><span class="math display">\[\therefore P = \frac{P_0 A_0}{A} e^{\frac{M \omega^2 x^2}{2RT}}\tag4\]</span></p>
+    <p>Where, <span class="math display">\(A\)</span> and <span class="math display">\(A_0\)</span> are functions of <span class="math display">\(x\)</span>.</p>
+    <p>Now, according to the question, we have,</p>
+    <p><span class="math display">\[r = \left( \frac{b-a}{L} \right) x + a\]</span></p>
+    <p><span class="math display">\[\implies A = \pi r^2 = \pi \left( \left( \frac{b-a}{L} \right) x + a \right)^2\]</span></p>
+    <p><span class="math display">\[A_0 = \pi a^2\]</span></p>
+    <p>Substituting these values into (4),</p>
+    <p><span class="math display">\[p = \frac{P_0 a^2 L^2}{\left( (b-a) x + aL \right) ^2} e^{\frac{M \omega^2 x^2}{2RT}}\]</span></p>
+    <hr />
+
+  </body>
+</html>
+<script type="text/javascript" src="../themeing.js"></script>

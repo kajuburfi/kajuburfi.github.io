@@ -1,0 +1,50 @@
+<!-- Just a simple 404 page, which also displays a cat image! -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <link rel="stylesheet" href="style.css" class="style">
+  <link rel="icon" type="image/x-icon" href="./favicon.ico">
+  <title>404</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="center disable-select titleMain" id="titleMain">404 Error!</div>
+
+    <!-- Using the same class and id, since I want the style to be same. -->
+    <div class="center disable-select quote" id="quote" onclick="window.location.href='./index.html';">Oh No! Maybe go back to the Homepage?</div>
+    
+    <div class="center disable-select aboutMe", id="aboutMe">
+      <h3 class="sub_header">Here, look at a cat!</h3>
+      <div class="catsImgDiv"></div>
+    </div>
+  </div>
+
+  <script>
+    function getCat() {
+      let catsImgDiv = document.querySelector(".catsImgDiv")
+      catsImgDiv.innerHTML='';
+      fetch("https://api.thecatapi.com/v1/images/search") 
+        .then((response) => response.json())
+        .then ((data) => {
+          let catsImgUrl = data[0].url;
+          let catImgEl = document.createElement("img");
+          catImgEl.setAttribute('src',`${catsImgUrl}`);
+          catImgEl.setAttribute('alt',`Couldn't get picture :(`);
+          catImgEl.setAttribute('width',`80%`);
+          catImgEl.setAttribute('height',`80%`);
+          catImgEl.setAttribute('title',`Cute, isn't it?`);
+          catImgEl.classList.add("showcase");
+          let catsImgDiv = document.querySelector(".catsImgDiv");
+          catsImgDiv.appendChild(catImgEl);
+        })
+        .catch (err=>console.log(err));
+    }
+    getCat();
+  </script>
+</body>
+</html>

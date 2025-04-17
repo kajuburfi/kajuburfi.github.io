@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../style.css" class="style">
+    <title>Question 25</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="center titleMain" id="titleMain">Question 25</div>
+      <div class="center quote" id="quote" style="cursor: auto;">LCR Railgun</div>
+    </div>
+
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <h4 id="q-25.-consider-a-similar-setup-as-the-last-question.-instead-of-just-a-capacitor-we-now-have-a-capacitor-of-capacitance-c-and-an-inductor-of-inductance-l.-other-conditions-remain-the-same.-find-the-charge-on-capacitor-the-current-through-the-circuit-and-the-velocity-of-the-rod-all-as-functions-of-time.">Q 25. Consider a similar setup as the last question. Instead of just a capacitor, we now have a capacitor of capacitance <span class="math display">\(C\)</span>, and an inductor of inductance <span class="math display">\(L\)</span>. Other conditions remain the same. Find the charge on capacitor, the current through the circuit, and the velocity of the rod all as functions of time. Neglect the magnetic fields produced by the wires themselves.</h4>
+    <p align="center">
+    <img align="center" src="https://i.upmath.me/svg/%5Cbegin%7Bcircuitikz%7D%0A%5Ccolor%7Bwhite%7D%3B%0A%5Cdraw%20(0%2C0)%20to%20%5Bcapacitor%2C%20l_%3D%24C%24%5D%20(0%2C1.5)%3B%0A%5Cdraw%20(0%2C1.5)%20to%20%5Binductor%2C%20l_%3D%24L%24%5D%20(0%2C3)%3B%0A%5Cdraw%20(0%2C0)%20--%20(5%2C0)%3B%0A%5Cdraw%20(0%2C3)%20--%20(5%2C3)%3B%0A%5Cdraw%5Bdensely%20dashed%5D%20(5%2C0)%20--%20(6%2C0)%3B%0A%5Cdraw%5Bdensely%20dashed%5D%20(5%2C3)%20--%20(6%2C3)%3B%0A%5Cdraw%5Bvery%20thick%5D%20(3%2C-.25)%20--%20(3%2C3.25)%3B%0A%5Cdraw%20(3.85%2C3.35)%20node%20%7B%24l%2C%20m%2C%20R%24%7D%3B%0A%5Cdraw%5B-%3E%5D%20(3%2C1.5)%20--%20(3.5%2C1.5)%3B%0A%5Cdraw%20(4%2C1.5)%20node%20%7B%24v_0%24%7D%3B%0A%5Cdraw%20(2%2C1.5)%20node%20%7B%24%5Cotimes%20%5Cvec%7BB%7D%24%7D%3B%0A%5Cend%7Bcircuitikz%7D%0A" alt="\begin{circuitikz}
+    \color{white};
+    \draw (0,0) to [capacitor, l_=$C$] (0,1.5);
+    \draw (0,1.5) to [inductor, l_=$L$] (0,3);
+    \draw (0,0) -- (5,0);
+    \draw (0,3) -- (5,3);
+    \draw[densely dashed] (5,0) -- (6,0);
+    \draw[densely dashed] (5,3) -- (6,3);
+    \draw[very thick] (3,-.25) -- (3,3.25);
+    \draw (3.85,3.35) node {$l, m, R$};
+    \draw[-&gt;] (3,1.5) -- (3.5,1.5);
+    \draw (4,1.5) node {$v_0$};
+    \draw (2,1.5) node {$\otimes \vec{B}$};
+    \end{circuitikz}
+    " />
+    </p>
+    <hr />
+    <h4 id="solution">Solution:</h4>
+    <p>Setting up equations similar to the last question, we get:</p>
+    <p><span class="math display">\[\dddot{q}L + \ddot{q} R + \dot{q} \frac{1}{C} + \dot{q} \frac{B^2l^2}{m}=0\]</span></p>
+    <p><span class="math display">\[\ddot{i}L + \dot{i} R + i \kappa = 0\]</span></p>
+    <p>Here, <span class="math display">\(\kappa\)</span> is the same as in last question,</p>
+    <p><span class="math display">\[\kappa \overset{\text{def}}{=}\frac{1}{C} + \frac{B^2l^2}{m} \]</span></p>
+    <p>Solving, and substituting initial conditions, and simplifying, we get:</p>
+    <p><span class="math display">\[i = \frac{v_0Bl}{\omega L} \sinh (\omega t) e^{-Kt}\tag1\]</span></p>
+    <p>Some superconstants used are defined as:</p>
+    <p><span class="math display">\[\omega \overset{\text{def}}{=} \frac{\sqrt{R^2 - 4 \kappa L}}{2L}\]</span></p>
+    <p><span class="math display">\[K \overset{\text{def}}{=} \frac{R}{2L}\]</span></p>
+    <p>A point to note is that <span class="math display">\(K&gt;\omega\)</span> is always true. This ensures that as <span class="math display">\(t\rightarrow \infty\)</span>, the current goes to zero. This can be easily proven. Try it!</p>
+    <p>From eq (1), we can write <span class="math display">\(i = \dot{q}\)</span> and integrate it over set limits to get the charge on the capacitor as a function of time:</p>
+    <p><span class="math display">\[q = \frac{v_0Bl}{L(K^2 - \omega^2)} \left[ 1 - \frac{\sqrt{K^2-\omega^2}}{\omega} \sinh (\alpha + \omega t)  e^{-Kt} \right]\tag2\]</span></p>
+    <p>Where,</p>
+    <p><span class="math display">\[\alpha = \sinh^{-1} \left( \frac{\omega}{\sqrt{K^2-\omega^2}}\right)\]</span></p>
+    <p>From this, we can find the velocity as a function of time:</p>
+    <p><span class="math display">\[v = v_0 - \frac{qBl}{m}\tag3\]</span></p>
+    <p>Where <span class="math display">\(q\)</span> is the function as given in eq (2).</p>
+    <p>Further, we can find the time at which there exist maximum current in the circuit:</p>
+    <p><span class="math display">\[t\big|_{\text{max }i} = \frac{1}{\omega} \tanh^{-1} \left( \frac{\omega}{K}\right)\]</span></p>
+    <p>Hence, we can find the maximum current in the circuit:</p>
+    <p><span class="math display">\[i_{\text{max}} = \frac{v_0 Bl}{L} \sqrt{\frac{(K^2-\omega^2)^{ \left( \frac{K^2}{\omega^2} -1 \right)} }{(K^2+\omega^2)^{ \left( \frac{K^2}{\omega^2} +1 \right)}}}\]</span></p>
+    <p>As in the previous question, we can also find the total heat generated from the rod due to current flowing through it. Here we make use of the fact that <span class="math display">\(\omega &lt; K\)</span> to evaluate an expression in the limit of the integral.</p>
+    <p><span class="math display">\[\int dH = \frac{v_0^2 B^2l^2 R}{\omega^2 L^2} \int_0^\infty \sinh^2(\omega t) e^{-2Kt} dt\]</span></p>
+    <p><span class="math display">\[\implies H = \frac{v_0^2 B^2l^2R}{4L^2K(K^2-\omega^2)}\]</span></p>
+    <hr />
+
+  </body>
+</html>
+<script type="text/javascript" src="../themeing.js"></script>

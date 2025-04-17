@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../style.css" class="style">
+    <title>Question 15</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="center titleMain" id="titleMain">Question 15</div>
+      <div class="center quote" id="quote" style="cursor: auto;">Conducting cylinders?</div>
+    </div>
+
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <h4 id="q-15.-solve-q-10-but-consider-a-conducting-neutral-cylinder-instead.">Q 15. Solve <a href="https://python128.github.io/questions/10">Q 10</a>, but consider a conducting neutral cylinder instead.</h4>
+    <hr />
+    <h4 id="idea">Idea:</h4>
+    <p>By using the method of images and symmetry, we get</p>
+    <p><span class="math display">\[\sigma = \frac{qR}{2 \pi (R^2 + l^2) ^{3\over2}} (\sigma q &lt; 0)\]</span></p>
+    <p>From here on, we do the same steps as in <a href="https://python128.github.io/questions/10">Q 10</a>.</p>
+    <p><span class="math display">\[F = {q^2 R^2 \over 16 \pi \epsilon_0}\left[ {1 \over (R^2 + x^2)^2} - { 1 \over (R^2 + (L-x)^2)^2}\right]\]</span></p>
+    <p><span class="math display">\[\implies v = \sqrt{ {q^2 \over 16 \pi \epsilon_0m R} \left[ \frac{1}{ {R \over x} + {x\over R} } + \frac{1}{ {R \over L} + {L\over R} } - \frac{1}{ {R \over L-x} + {L-x\over R} }+ \tan^{-1}\left( {x \over R} \right) + \tan^{-1}\left( {L \over R} \right) - \tan^{-1}\left( {L-x \over R} \right) \right] }\]</span></p>
+    <p>Here, we note that the motion is not oscillatory.</p>
+    <p>Velocity at end of the cylinder,</p>
+    <p><span class="math display">\[v\big|_{x=L} = \sqrt{ {q^2 \over 8 \pi \epsilon_0m R} \left[ \frac{1}{ {R \over L} + {L\over R} } + \tan^{-1}\left( {L \over R} \right) \right] }\]</span></p>
+    <p>If we let <span class="math display">\(L\to\infty\)</span>,</p>
+    <p><span class="math display">\[v\big|_{x=\infty} = {q \over 4 \sqrt{m R \epsilon_0} }\]</span></p>
+    <p>Which is a constant finite terminal velocity.</p>
+    <p>For some estimation,</p>
+    <p><span class="math display">\(q=1\)</span>C; <span class="math display">\(m=1\)</span>kg; <span class="math display">\(R=1\)</span>m</p>
+    <p><span class="math display">\[v\big|_{x=\infty} \approx 10^5 \text{ms}^{-1}\]</span></p>
+    <hr />
+
+  </body>
+</html>
+<script type="text/javascript" src="../themeing.js"></script>

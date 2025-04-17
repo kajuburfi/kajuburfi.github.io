@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../style.css" class="style">
+    <title>Question 14</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="center titleMain" id="titleMain">Question 14</div>
+      <div class="center quote" id="quote" style="cursor: auto;">A very large cylinder</div>
+    </div>
+
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <h4 id="q-14.-in-q-10-assuming-the-cylinder-to-be-of-sufficient-length-we-can-say-that-the-particles-velocity-will-eventually-reach-the-speed-of-light-c.-this-will-clearly-happen-at-the-midpoint-of-the-cylinder.-find-the-necessary-length-of-the-cylinder-assuming-the-same-assumptions-as-made-before.-neglect-relativistic-effects-and-use-newtonian-mechanics.">Q 14. In <a href="https://python128.github.io/questions/10">Q 10</a>, assuming the cylinder to be of sufficient length, we can say that the particle’s velocity will eventually reach the speed of light, <span class="math display">\(c\)</span>. This will clearly happen at the midpoint of the cylinder. Find the necessary length of the cylinder assuming the same assumptions as made before. Neglect relativistic effects, and use newtonian mechanics.</h4>
+    <hr />
+    <h4 id="idea">Idea:</h4>
+    <p>If we substitute <span class="math display">\(x\)</span> as <span class="math display">\({L \over 2}\)</span>, and <span class="math display">\(v\)</span> as <span class="math display">\(c\)</span> in the expression previously derived, we can solve for <span class="math display">\(L\)</span>.</p>
+    <p>Hence,</p>
+    <p><span class="math display">\[c =  \sqrt{ {\sigma R q \over m \epsilon_0} \left[ \sinh^{-1} \left( {L \over 2R} \right) + \sinh^{-1} \left( {L \over 2R} \right) - \sinh^{-1} \left( {L \over R}\right)\right]}\]</span></p>
+    <p>We know that,</p>
+    <p><span class="math display">\[\sinh^{-1} x \pm \sinh^{-1} y = \sinh^{-1}(x\sqrt{1+y^2} \pm y \sqrt{1+x^2})\]</span></p>
+    <p>We can then approximate <span class="math display">\(L&gt;&gt;R\)</span>.</p>
+    <p>Hence, we get</p>
+    <p><span class="math display">\[L = 4R\sinh\left({c^2 m \epsilon_0 \over \sigma R q}\right) = 2R\left[e^{c^2 m \epsilon_0 \over \sigma R q} - e^{-c^2 m \epsilon_0 \over \sigma R q}\right]\]</span></p>
+    <p>To get an idea of how enormous this quantity is, consider:</p>
+    <p><span class="math display">\(R=1\)</span>m; <span class="math display">\(m=1\)</span>g; <span class="math display">\(\sigma=10\text{Cm}^{-2}\)</span>; <span class="math display">\(q=1\)</span>C.</p>
+    <p>These are already extreme numbers, since 1 C of charge in 1g is very difficult, along with the high charge density, <span class="math display">\(\sigma\)</span>.</p>
+    <p>Substituting,</p>
+    <p><span class="math display">\[{c^2 m \epsilon_0 \over \sigma R q}\approx 566.4\]</span></p>
+    <p><span class="math display">\[\implies e^{c^2 m \epsilon_0 \over \sigma R q} \approx 9.67 \times 10^{245}\]</span></p>
+    <p><span class="math display">\[\text{and, } e^{-c^2 m \epsilon_0 \over \sigma R q} \to 0\]</span></p>
+    <p><span class="math display">\[L = 2R e^{566.4}\]</span></p>
+    <p><span class="math display">\[L \approx 2 \times 10^{245}\text{m}\]</span></p>
+    <p>Clearly, <span class="math display">\(L&gt;&gt;R\)</span>.</p>
+    <p>For comparison, the size of the observable universe is approximately <span class="math display">\(8.8 \times 10^{26}\)</span>m. This implies our cylinder ought to be <span class="math display">\(2.2 \times 10 ^{219}\)</span> times bigger than the observable universe.</p>
+    <p>Note that if we had considered relativistic effects, as the particle approaches the speed of light, its mass increases. This implies that the length of the cylinder would be much larger, and in fact, tend to infinity.</p>
+    <hr />
+
+  </body>
+</html>
+<script type="text/javascript" src="../themeing.js"></script>

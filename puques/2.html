@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../style.css" class="style">
+    <title>Question 2</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="center titleMain" id="titleMain">Question 2</div>
+      <div class="center quote" id="quote" style="cursor: auto;">An intruiging trajectory</div>
+    </div>
+
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <h4 id="q2.-a-table-with-a-smooth-horizontal-surface-is-rotating-with-constant-angular-velocity-omega-about-the-vertical-axis.-a-groove-is-made-radially-and-a-particle-is-placed-at-a-distance-a-from-the-centre.-find-the-trajectory-of-the-particle-as-a-function-of-the-angular-displacement-theta.">Q2. A table with a smooth horizontal surface is rotating with constant angular velocity <span class="math display">\(\omega\)</span> about the vertical axis. A groove is made radially, and a particle is placed at a distance <span class="math display">\(a\)</span> from the centre. Find the trajectory of the particle as a function of the angular displacement <span class="math display">\(\theta\)</span>.</h4>
+    <p>Solution:</p>
+    <p><img src="./docs/2_1.png" /></p>
+    <p>Assuming, table to be infinitely large(ball doesn’t fall off).</p>
+    <p>Net force radially outward = <span class="math display">\(mR\omega^2\)</span></p>
+    <p>Let <span class="math display">\(r\)</span> be the radial position at any time.</p>
+    <p><span class="math display">\[\ddot{x} = \omega^2 r\]</span></p>
+    <p><span class="math display">\[v \frac{dv}{dr} = \omega^2 r\]</span></p>
+    <p><span class="math display">\[\int_{0}^{v} v dv = \int_{a}^{r} \omega^2 r dr\]</span></p>
+    <p><span class="math display">\[v = \omega \sqrt{r^2 - a^2} \]</span></p>
+    <p><span class="math display">\[\int_{a}^{r} \frac{dr}{\sqrt{r^2 - a^2}} = \int_{0}^{t} \omega dt\]</span></p>
+    <p><span class="math display">\[\ln | r+\sqrt{r^2 - a^2} | \Big|_{a}^{r} = \omega t \Bigr|_{0}^{t}\]</span></p>
+    <p><span class="math display">\[\ln \frac{r+\sqrt{r^2 - a^2}}{a} = \omega t\]</span></p>
+    <p><span class="math display">\[r + \sqrt{r^2 - a^2} = a e^{\omega t}\tag1\]</span></p>
+    <p>Reciprocating,</p>
+    <p><span class="math display">\[\frac{1}{r + \sqrt{r^2 - a^2}} = \frac{e^{-\omega t}}{a}\]</span></p>
+    <p>Rationalising,</p>
+    <p><span class="math display">\[\frac{r - \sqrt{r^2-a^2}}{a^2} = \frac{e^{-\omega t}}{a}\tag2\]</span></p>
+    <p>Adding (1) and (2), we get</p>
+    <p><span class="math display">\[2r = a(e^{\omega t} + e^{-\omega t})\]</span></p>
+    <p>We know that, for <span class="math display">\(\alpha = 0\)</span>, <span class="math display">\(\omega t = \theta\)</span>.</p>
+    <p><span class="math display">\[\therefore r = \frac{a}{2} ( e^\theta + e^{-\theta}) = a \cosh (\theta)\]</span></p>
+
+    <hr>
+    Here we can see the graph of the trajectory, i.e., this is how the ball will move. This graph is for \(a = 1\text{m}\).
+    <br> 
+
+    <iframe src="https://www.desmos.com/calculator/d8tjd2zy2d?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=1></iframe>
+
+    <hr>
+  </body>
+</html>
+<script type="text/javascript" src="../themeing.js"></script>

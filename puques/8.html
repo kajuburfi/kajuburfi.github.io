@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../style.css" class="style">
+    <title>Question 8</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="center titleMain" id="titleMain">Question 8</div>
+      <div class="center quote" id="quote" style="cursor: auto;">Moment of inertia of a torus</div>
+    </div>
+
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <h4 id="q8.-find-the-moment-of-inertia-of-a-torus-about-its-axis-of-symmetry.-assume-mass-m-major-radius-r-minor-radius-a.">Q8. Find the moment of inertia of a torus about its axis of symmetry. Assume mass <span class="math display">\(m\)</span>, major radius <span class="math display">\(R\)</span>, minor radius <span class="math display">\(a\)</span>.</h4>
+    <hr />
+    <h4 id="idea">Idea:</h4>
+    <p>We shall consider a circle, whose centre is placed at a distance <span class="math display">\(R\)</span> from the origin on the X axis, and radius a, and we shall revolve this about the Z axis to form a torus. Hence, we can find its moment of inertia. We shall also make use of the fact that integration, i.e. area under a curve, for an odd function from <span class="math display">\(-a\)</span> to <span class="math display">\(a\)</span> is always 0, regardless of the function. This is obvious, but if you want, imagine an odd function, say <span class="math display">\(f(x) = x\)</span>, or <span class="math display">\(f(x) = \sin x\)</span>, and integrate, i.e. find its area, from <span class="math display">\(-a\)</span> to <span class="math display">\(a\)</span>.</p>
+    <hr />
+    <h4 id="solution">Solution:</h4>
+    <p><img src="./docs/8_1.png" /></p>
+    <p>From figure, equation on circle:</p>
+    <p><span class="math display">\[(x-R)^2 + z^2 = a^2 \]</span></p>
+    <p><span class="math display">\[\implies z = \sqrt{a^2 - (x-R)^2}\tag1\]</span></p>
+    <p>We shall first find the volume of a torus, since it is necessary to find the moment of inertia.</p>
+    <p><span class="math display">\[V = \int_{body} dV\]</span></p>
+    <p><span class="math display">\[= \int_{R-a}^{R+a} \int_{0}^{2\pi} \int_{-z}^{z} x dx d \theta dz\]</span></p>
+    <p>Where, <span class="math display">\(z\)</span> is given by eqn. (1)</p>
+    <p><span class="math display">\[\implies V = 2(2 \pi) \int_{R-a}^{R+a} x \sqrt{a^2 - (x-R)^2} \; dx\]</span></p>
+    <p>Let <span class="math display">\(u = x-R\)</span> <span class="math display">\(\implies x = u+R\)</span> and <span class="math display">\(du = dx\)</span>.</p>
+    <p>As <span class="math display">\(x\)</span> varies from <span class="math display">\(R-a\)</span> to <span class="math display">\(R+a\)</span>, <span class="math display">\(u\)</span> varies from <span class="math display">\(-a\)</span> to <span class="math display">\(a\)</span>.</p>
+    <p><span class="math display">\[V = 4\pi \int_{-a}^a (u+R) \sqrt{a^2 - u^2} \; du\]</span></p>
+    <p><span class="math display">\[= 4 \pi \left[ \int_{-a}^a u \sqrt{a^2 - u^2} du + R \int _{-a}^a \sqrt{a^2 - u^2} du \right]\]</span></p>
+    <p>Since, the first term in the bracket is an odd function, the entire term goes to zero. The second term is nothing but the area under a semicircle of radius <span class="math display">\(a\)</span> (centred at origin).</p>
+    <p><span class="math display">\[\implies V = 2\pi^2 a^2 R\tag2\]</span></p>
+    <p>Now, to find <span class="math display">\(I_{zz&#39;}\)</span></p>
+    <p><span class="math display">\[I_{zz&#39;} = \int_{body} r^2 dm\]</span></p>
+    <p><span class="math display">\[= 2 \int_{R-a}^{R+a} \int_{0}^{2\pi} \int_{0}^{z} x^3 {m \over 2 \pi^2 a^2 R} dx d \theta dz\]</span></p>
+    <p>Where, <span class="math display">\(z\)</span> is again given by eqn (1).</p>
+    <p>By following the same substitution steps, we get,</p>
+    <p><span class="math display">\[I_{zz&#39;} = {2m \over \pi a^2 R} \int_{-a}^a (u+R)^3 \sqrt{a^2 - u^2} du\]</span></p>
+    <p>Using binomial theorem,</p>
+    <p><span class="math display">\[= {2m \over \pi a^2 R} \left[ \int_{-a}^a u^3 \sqrt{a^2 - u^2} du + 3R\int_{-a}^a u^2 \sqrt{a^2 - u^2} du + 3R^2\int_{-a}^a u \sqrt{a^2 - u^2} du + \int_{-a}^a R^3 \sqrt{a^2 - u^2} du \right]\]</span></p>
+    <p>Here again, the first and third terms vanish. After integrating, we get,</p>
+    <p><span class="math display">\[= {2m \over \pi a^2 R} \left[ 3R \left({\pi \over 8} a^4 \right) + R^3 \left( {\pi a^2 \over 2} \right) \right] \]</span></p>
+    <p><span class="math display">\[\therefore I_{zz&#39;} = m\left( {3a^2\over 4} + R^2 \right)\]</span></p>
+    <hr />
+    <p>Here, we note that this formula works in the boundary condition of when <span class="math display">\(a = 0\)</span>, it becomes a ring, whose moment of inertia is <span class="math display">\(mR^2\)</span>. However, for some reason, if <span class="math display">\(R = 0\)</span>, we get a sphere, but the moment of inertia of a sphere is <span class="math display">\({2\over5} mR^2\)</span>, which we do not get according to this forumla.</p>
+    <hr />
+
+  </body>
+</html>
+<script type="text/javascript" src="../themeing.js"></script>

@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../style.css" class="style">
+    <title>Question 9</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="center titleMain" id="titleMain">Question 9</div>
+      <div class="center quote" id="quote" style="cursor: auto;">Time of collision in free space</div>
+    </div>
+
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <h4 id="q9.-to-find-the-time-of-collision-of-two-point-sized-bodies-kept-at-a-distance-r-from-each-other-initially-at-rest-having-equal-masses-m.">Q9. To find the time of collision of two (point sized) bodies kept at a distance <span class="math display">\(R\)</span> from each other, initially at rest, having equal masses <span class="math display">\(M\)</span>.</h4>
+    <hr />
+    <h4 id="idea">Idea:</h4>
+    <p>Clearly, since the masses are equal, their centre of mass lies at their geometrical centre, which would be the point at which they collide. This is because there is no external force acting on this system. This implies the centre of mass is stationary.</p>
+    <p>Consider a general instant at which the bodies are at a distance <span class="math display">\(r\)</span> away from each other. Here, we can write the gravitational potential energy and apply conservation of energy, hence finding velocity as a function of position <span class="math display">\(r\)</span>. From this, we write <span class="math display">\(v = {dx \over dt}\)</span> and integrate as <span class="math display">\(r\)</span> varies from <span class="math display">\(R\)</span> to <span class="math display">\(0\)</span>, and time varies from <span class="math display">\(0\)</span> to <span class="math display">\(t\)</span>.</p>
+    <p><img src="./docs/9_1.png" /></p>
+    <hr />
+    <h4 id="answer">Answer:</h4>
+    <p><span class="math display">\[t = \frac{\pi}{2} \sqrt{\frac{R^3}{2GM}}\]</span></p>
+    <hr />
+    <h4 id="q9b.-consider-a-hole-dug-through-the-earthdiametrically-of-negligible-radius.-now-we-drop-a-small-point-sized-body-of-mass-m.-find-the-time-taken-for-it-to-reach-the-other-side.-consider-the-earth-to-be-of-uniform-density-rho-its-mass-to-be-m-and-its-radius-r.-neglect-air-resistance.">Q9(b). Consider a hole dug through the Earth(diametrically) of negligible radius. Now, we drop a small point sized body of mass <span class="math display">\(m\)</span>. Find the time taken for it to reach the other side. Consider the Earth to be of uniform density <span class="math display">\(\rho\)</span>, its mass to be <span class="math display">\(M\)</span>, and its radius <span class="math display">\(R\)</span>. Neglect air resistance.</h4>
+    <p><img src="./docs/9_2.png" /></p>
+    <p>Interestingly, when we solve it, in a similar fashion to the question above, we get this:</p>
+    <p><span class="math display">\[t = \pi \sqrt{R^3 \over G M}\]</span></p>
+    <p>Note that the mass of the point body is irrelevant. Substituting relevant values, we get,</p>
+    <p><span class="math display">\[t \approx 2535 \text{ s} \approx 42 \text{ min and } 15 \text{ s}\]</span></p>
+
+  </body>
+</html>
+<script type="text/javascript" src="../themeing.js"></script>

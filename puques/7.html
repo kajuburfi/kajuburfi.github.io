@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../style.css" class="style">
+    <title>Question 7</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="center titleMain" id="titleMain">Question 7</div>
+      <div class="center quote" id="quote" style="cursor: auto;">One way to find the moment of inertia of an ellipse</div>
+    </div>
+
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <h4 id="q7.-find-the-moment-of-inertia-of-an-ellipse-lamina-about-an-axis-passing-through-the-centre-perpendicular-to-the-lamina.-consider-the-ellipse-to-have-semi-minor-axis-of-length-b-and-semi-major-axis-of-length-a.">Q7. Find the moment of inertia of an ellipse (lamina) about an axis passing through the centre, perpendicular to the lamina. Consider the ellipse to have semi minor axis of length <span class="math display">\(b\)</span>, and semi major axis of length <span class="math display">\(a\)</span>.</h4>
+    <hr />
+    <h4 id="idea">Idea:</h4>
+    <p>There are many methods to find the moment of inertia. Here, we shall find the corresponding moments of inertia about the X axis and the Y axis, and use perpendicular axis theorem to find the moment of inertia about the Z axis. We shall work in Cartesian coordinates.</p>
+    <hr />
+    <h4 id="solution">Solution:</h4>
+    <p><img src="./docs/7_1.png" /></p>
+    <p>The equation of the given ellipse is</p>
+    <p><span class="math display">\[\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1\]</span></p>
+    <p>Which can be written as,</p>
+    <p><span class="math display">\[x = \frac{a}{b} \sqrt{b^2 - y^2}\tag1\]</span></p>
+    <p>The moment of inertia of any body is generally given by,</p>
+    <p><span class="math display">\[I = \int_{Body} r^2 dm\]</span></p>
+    <p>Here, <span class="math display">\(dm\)</span> will be,</p>
+    <p><span class="math display">\[dm = \sigma dA = \frac{m}{\pi a b} dx dy\]</span></p>
+    <p>Where, <span class="math display">\(\sigma\)</span> is the superficial density.</p>
+    <p>Hence, we can write,</p>
+    <p><span class="math display">\[I_{XX&#39;} = \int_{-x}^{x} \int_{-b}^{b} y^2 \frac{m}{\pi a b} dx dy\]</span></p>
+    <p>Where, <span class="math display">\(x\)</span> is given by eq. (1).</p>
+    <p><span class="math display">\[\implies I_{XX&#39;} = \int_{-b}^b \frac{2}{b} \sqrt{b^2 - y^2} \; y^2 \; \frac{m}{\pi b} dy\]</span></p>
+    <p><span class="math display">\[I_{XX&#39;} = \frac{2m}{\pi b^2} \int_{-b}^b y^2 \sqrt{b^2 - y^2} \; dy\]</span></p>
+    <details>
+    <p><summary> Steps for integral </summary></p>
+    <hr />
+    <p><span class="math display">\[\int_{-b}^b y^2 \sqrt{b^2 - y^2} \; dy\]</span></p>
+    <p>We shall use a substitution,</p>
+    <p><span class="math display">\[y = b \sin \alpha\]</span></p>
+    <p><span class="math display">\[\implies dy = b \cos \alpha d \alpha\]</span></p>
+    <p>And corresponding change of limits, we get</p>
+    <p><span class="math display">\[= \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} b^2 \sin^2 \alpha ( b \cos \alpha) \; b \cos \alpha d \alpha\]</span></p>
+    <p><span class="math display">\[= b^4 \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} \sin^2 \alpha \cos^2 \alpha \; d \alpha\]</span></p>
+    <p>Multiplying and dividing by 4 to use,</p>
+    <p><span class="math display">\[4\sin^2 \alpha \cos^2 \alpha = \sin^2 2 \alpha\]</span></p>
+    <p><span class="math display">\[\sin^2 2 \alpha = \frac{1 - \cos 4 \alpha}{2}\]</span></p>
+    <p><span class="math display">\[= \frac{b^4}{4} \left( \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} \frac{1}{2} d \alpha - \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} \frac{cos 4 \alpha}{2} d\alpha \right)\]</span></p>
+    <p><span class="math display">\[= \frac{b^4}{4} \left( \frac{\pi}{2} - \frac{1}{8} \sin 4 \alpha \Bigr|_{-\frac{\pi}{2}}^{\frac{\pi}{2}} \right)\]</span></p>
+    <p><span class="math display">\[= \frac{b^4}{4} \left( \frac{\pi}{2} - 0 \right)\]</span></p>
+    <p><span class="math display">\[\implies \int_{-b}^b y^2 \sqrt{b^2 - y^2} \; dy = \frac{\pi b^4}{8}\]</span></p>
+    <hr />
+    </details>
+    <p>Which gives,</p>
+    <p><span class="math display">\[I_{XX&#39;} = \left( \frac{2m}{\pi b^2} \right) \frac{\pi b^4}{8} = \frac{m b^2}{4}\]</span></p>
+    <p>Similarly, by analogy,</p>
+    <p><span class="math display">\[I_{YY&#39;} = \frac{m a^2}{4}\]</span></p>
+    <p>Using perpendicular axis theorem,</p>
+    <p><span class="math display">\[I_\perp = I_{XX&#39;} + I_{YY&#39;}\]</span></p>
+    <p><span class="math display">\[= \frac{m a^2}{4} + \frac{m b^2}{4}\]</span></p>
+    <p><span class="math display">\[\therefore I_\perp = \frac{m}{4} (a^2 + b^2)\]</span></p>
+
+  </body>
+</html>
+<script type="text/javascript" src="../themeing.js"></script>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../style.css" class="style">
+    <title>Question 10</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="center titleMain" id="titleMain">Question 10</div>
+      <div class="center quote" id="quote" style="cursor: auto;">A long expression</div>
+    </div>
+
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <h4 id="q10.-consider-a-charged-non-conducting-hollow-cylinder-of-surface-change-density-sigma-radius-r-and-length-l.-a-particle-of-mass-m-change-q-is-dropped-at-one-end-of-the-tube.-find-velocity-at-a-general-position-x-from-the-top-of-cylinder.-given-qsigma-0.-neglect-gravity.">Q10. Consider a charged non conducting hollow cylinder of surface change density <span class="math display">\(\sigma\)</span>, radius <span class="math display">\(R\)</span>, and length <span class="math display">\(L\)</span>. A particle of mass <span class="math display">\(m\)</span>, change <span class="math display">\(q\)</span> is dropped at one end of the tube. Find velocity at a general position <span class="math display">\(x\)</span> from the top of cylinder. Given: <span class="math display">\(q\sigma &lt; 0\)</span>. Neglect gravity.</h4>
+    <hr />
+    <h4 id="idea">Idea:</h4>
+    <p>Consider the point to be at some position <span class="math display">\(x\)</span>. From there, at a distance <span class="math display">\(y\)</span>, consider of thin ring of thickness <span class="math display">\(dy\)</span>. Find the force on the particle due to this ring, and hence all such rings by integrating <span class="math display">\(y\)</span> from <span class="math display">\(-x\)</span> to <span class="math display">\(L-x\)</span>. We get,</p>
+    <p><span class="math display">\[F = {\sigma R q \over m \epsilon_0}\left[\frac{1}{\sqrt{R^2 + x^2}} - \frac{1}{\sqrt{R^2 + (L-x)^2}}\right]\]</span></p>
+    <p>Here, we can see that maximum velocity is attained at <span class="math display">\({L\over2}\)</span>, which can be seen by substituting it in the previous equation.</p>
+    <p>Now, we can write <span class="math display">\(F = ma\)</span>, and solve for <span class="math display">\(v\)</span>.</p>
+    <p><img src="./docs/10_1.png" /></p>
+    <p><span class="math display">\[v = \sqrt{ {\sigma R q \over m \epsilon_0} \ln\left|\frac{(x+\sqrt{x^2 + R^2})\left((L-x) + \sqrt{(L-x)^2+R^2}\right)}{R(L+\sqrt{L^2 + R^2})}\right|}\]</span></p>
+    <p>Which can also be written as,</p>
+    <p><span class="math display">\[v =  \sqrt{ {\sigma R q \over m \epsilon_0} \left[ \sinh^{-1} \left( {x \over R} \right) + \sinh^{-1} \left( {L-x \over R} \right) - \sinh^{-1} \left( {L \over R}\right)\right]}\]</span></p>
+    <p>Where, <span class="math display">\[\sinh^{-1} = \ln \lvert x + \sqrt{x^2 + 1}\rvert\]</span> by definition.</p>
+
+  </body>
+</html>
+<script type="text/javascript" src="../themeing.js"></script>

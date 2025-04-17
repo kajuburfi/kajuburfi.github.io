@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../style.css" class="style">
+    <title>Question 1</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="center titleMain" id="titleMain">Question 1</div>
+      <div class="center quote" id="quote" style="cursor: auto;">A fascinating problem that is quite unintuitive.</div>
+    </div>
+
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <h4 id="q1.-a-metal-ring-of-mass-m-and-radius-r-is-set-rotating-about-an-exis-going-through-the-diameter.-the-experiment-is-conducted-in-space-at-an-infinite-distance.-its-angualar-velocity-is-omega.-find-tension-as-a-function-on-angle-theta-from-horizontal.">Q1. A metal ring of mass M and radius R is set rotating about an exis going through the diameter. The experiment is conducted in space at an infinite distance. Its angualar velocity is <span class="math display">\(\omega\)</span>. Find tension as a function on angle <span class="math display">\(\theta\)</span> from horizontal.</h4>
+    <p>Solution: Let tension be T.</p>
+    <p><img src="./docs/1_1.png" /></p>
+    <p>Free Body diagram for elementary section of ring.</p>
+    <p><img src="./docs/1_2.png" /></p>
+    <p>Force balance along vertical,</p>
+    <p><span class="math display">\[(T+dT) \cos(\theta + d \theta) = T \cos \theta\tag1\]</span></p>
+    <p>Centripetal force acting inwards along horizontal,</p>
+    <p><span class="math display">\[(T+dT)\cos(\theta + d \theta) - T \sin \theta = dm(r)(\omega^2)\tag2\]</span></p>
+    <p>Simplifying (1),</p>
+    <p><span class="math display">\[T\sin\theta d \theta = dT \cos \theta\tag1\]</span></p>
+    <p>Simplifying (2),</p>
+    <p><span class="math display">\[T\cos\theta d \theta + dT \sin \theta = \frac{MR\omega^2}{2\pi} \cos \theta d \theta \tag2\]</span></p>
+    <p>Let <span class="math display">\(T_0 = \frac{MR\omega^2}{2\pi}\)</span></p>
+    <p>Substituting (1) in (2), we get</p>
+    <p><span class="math display">\[\cos \theta (dT cot \theta) + dT \sin \theta = T_0 \cos \theta d \theta\]</span></p>
+    <p><span class="math display">\[dT = T_0 \sin \theta \cos \theta d \theta\]</span></p>
+    <p>Integrating,</p>
+    <p><span class="math display">\[\int_{T_0}^{T} dT = \frac{T_0}{2} \int_{0}^{\theta} \sin 2\theta d\theta\]</span></p>
+    <p><span class="math display">\[T = T_0\left( 1 + \frac{1}{2} \sin^2 \theta \right)\]</span></p>
+    <p><span class="math display">\[\therefore T = \frac{MR\omega^2}{2\pi}\left(1 + \frac{1}{2}\sin^2 \theta \right)\]</span></p>
+    <hr />
+    <p>Implications of the above result. Tension at horizontal level (<span class="math display">\(\theta = 0\)</span>), <span class="math display">\(T_A = \frac{MR\omega^2}{2\pi}\)</span> Tension at vertical, i.e. top and botton points (<span class="math display">\(\theta = \frac{\pi}{2}\)</span>), <span class="math display">\[T_B = \frac{3}{2}\frac{MR\omega^2}{2\pi}\]</span></p>
+    <p>This implies that <strong>Tension at top and bottom points is greater than tension at midpoint.</strong>.</p>
+    <p>Intuitively, it would feel like tension would be maximum at the midpoints(pt A), and be 0 at top and bottom points(pt B). However, as we have solved it, we can see that tension at A is minimum, and increases as we move up or down. But, our intuitiveness is not wrong, just misguided. If we consider a small section about the point B, we see that tension forces left and right cancel out to give a net force of 0. But actually it would be <span class="math display">\(T_B\)</span>. This is the key point.</p>
+    <hr />
+
+  </body>
+</html>
+<script type="text/javascript" src="../themeing.js"></script>

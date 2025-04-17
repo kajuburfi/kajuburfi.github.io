@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../style.css" class="style">
+    <title>Question 23</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="center titleMain" id="titleMain">Question 23</div>
+      <div class="center quote" id="quote" style="cursor: auto;">Cyclic Radioactivity</div>
+    </div>
+
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <h4 id="q-23.-consider-the-following-cyclic-decay-of-nuclei-with-the-given-rate-constants.-find-the-quantity-of-each-type-of-nucleus-as-a-function-of-time.-assume-initially-they-all-start-with-a_0-b_0-and-c_0-of-nuclei.">Q 23. Consider the following cyclic decay of nuclei, with the given rate constants. Find the quantity of each type of nucleus as a function of time. Assume initially they all start with <span class="math display">\(A_0\)</span>, <span class="math display">\(B_0\)</span> and <span class="math display">\(C_0\)</span> of nuclei.</h4>
+    <p><img src="./docs/23_1.png" /></p>
+    <hr />
+    <h4 id="solution">Solution</h4>
+    <p>Say the quantity of <span class="math display">\(A\)</span> at some time <span class="math display">\(t\)</span> is <span class="math display">\(N_A\)</span>, and similarly for <span class="math display">\(B\)</span> and <span class="math display">\(C\)</span>.</p>
+    <p>We can frame the following system of differential equations:</p>
+    <p><span class="math display">\[\frac{d N_A}{dt} = \lambda_3N_C - \lambda_1N_A\]</span></p>
+    <p><span class="math display">\[\frac{d N_B}{dt} = \lambda_1N_A - \lambda_2N_B\]</span></p>
+    <p><span class="math display">\[\frac{d N_C}{dt} = \lambda_2N_B - \lambda_3N_C\]</span></p>
+    <p>Now, we have to solve these equations.</p>
+    <p>Note that if we add all three equations, we get:</p>
+    <p><span class="math display">\[\dot{N}_A + \dot{N}_B + \dot{N}_C = 0\]</span></p>
+    <p><span class="math display">\[\implies N_A + N_B + N_C = \text{constant} \overset{\text{def}}{=} n\]</span></p>
+    <p>This basically says that if we add up the number of nuclei of all three substances at any time, it must be the same, i.e. it is constant. This means,</p>
+    <p><span class="math display">\[A_0 + B_0 + C_0 = n\]</span></p>
+    <p><span class="math display">\[\implies N_C = n - (N_A + N_B)\]</span></p>
+    <p>Substituting this is our first equation, we get</p>
+    <p><span class="math display">\[\frac{d N_A}{dt} = \lambda_3n - (\lambda_3 + \lambda_1)N_A - \lambda_3N_B\]</span></p>
+    <p>Differentiating this with respect to time,</p>
+    <p><span class="math display">\[\ddot{N}_A = -(\lambda_3 + \lambda_1) \dot{N}_A - \lambda_3 \dot{N}_B\]</span></p>
+    <p>We can then substitute the second equation into this to get a linear second order differential equation in <span class="math display">\(N_A\)</span>.</p>
+    <p><span class="math display">\[\ddot{N}_A + \alpha \dot{N}_A + \beta N_A = \lambda_2 \lambda_3 n\]</span></p>
+    <p>Where,</p>
+    <p><span class="math display">\[\alpha = \lambda_1 + \lambda_2 + \lambda_3\]</span></p>
+    <p><span class="math display">\[\beta = \lambda_1\lambda_2 + \lambda_2\lambda_3 + \lambda_3\lambda_1\]</span></p>
+    <p>We can rearrange the equation as so,</p>
+    <p><span class="math display">\[\ddot{N}_A + \alpha \dot{N}_A + \beta \left( N_A - {\lambda_2 \lambda_3 \over \beta }n \right) = 0\]</span></p>
+    <p>We now define,</p>
+    <p><span class="math display">\[X_A = \left( N_A - {\lambda_2 \lambda_3 \over \beta }n \right)\]</span></p>
+    <p>We do this in order to remove the constant. Also,</p>
+    <p><span class="math display">\[E_A \overset{\text{def}}{=} {\lambda_2\lambda_3 \over \beta } n\]</span></p>
+    <p>And similarly for <span class="math display">\(E_B\)</span> and <span class="math display">\(E_C\)</span>. These are the equilibrium values for the nuclei, i.e. their final quantities at time <span class="math display">\(t = \infty\)</span>.</p>
+    <p>Hence, our equation becomes,</p>
+    <p><span class="math display">\[\ddot{X}_A + \alpha \dot{X}_A + \beta X_A = 0\]</span></p>
+    <p>The solution for this is known as</p>
+    <p><span class="math display">\[X_A = c_1e^{\tau_1t} + c_2 e^{\tau_2t}\]</span></p>
+    <p>Where <span class="math display">\(\tau_1\)</span>, <span class="math display">\(\tau_2\)</span> are defined as</p>
+    <p><span class="math display">\[\tau_1,\tau_2 = \frac{-\alpha \pm \sqrt{\alpha^2 - 4\beta}}{2}\]</span></p>
+    <p>We can solve for <span class="math display">\(c_1\)</span> and <span class="math display">\(c_2\)</span> by substituting appropriate initial conditions.</p>
+    <p>The solution is given in this desmos plot, with a little extra terms, since desmos can’t directly register the imaginary constant in the function, and hence we must split it into 3 parts: Underdamped, Critically damped and overdamped cases. Note that they are slightly different, but this change is only due to the fact that <span class="math display">\[\alpha^2-4\beta\]</span> may be positive or negative, giving imaginary numbers. Note that regardless of it being imaginary, the final function as a whole is always real.</p>
+    <p>Plot: </p>
+    <iframe src="https://www.desmos.com/calculator/eahiyhc628?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>
+    <hr />
+
+  </body>
+</html>
+<script type="text/javascript" src="../themeing.js"></script>

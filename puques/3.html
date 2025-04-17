@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../style.css" class="style">
+    <title>Question 3</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="center titleMain" id="titleMain">Question 3</div>
+      <div class="center quote" id="quote" style="cursor: auto;">Infinite object with finite elongation over tensile stress?</div>
+    </div>
+
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <h4 id="q3.-consider-a-3d-shape-whose-left-end-has-radius-1m.-the-shape-is-circular-with-its-radius-increasing-continually-as-r-ax-a-in-mathbbr.-assume-forces-to-be-acting-in-the-centre-of-the-side-circular-faces-on-both-sides.-consider-it-to-have-youngs-modulus-y.-find-elongation-delta-l.">Q3. Consider a 3D shape whose left end has radius <span class="math display">\(1\)</span>m. The shape is circular, with its radius increasing continually as <span class="math display">\(r = a^x\)</span>, <span class="math display">\(a \in \mathbb{R^+}\)</span>. Assume forces to be acting in the centre of the side (circular) faces on both sides. Consider it to have Young’s modulus <span class="math display">\(Y\)</span>. Find elongation <span class="math display">\(\Delta L\)</span>.</h4>
+    <p><img src="./docs/3_1.png" /></p>
+    <p>We know that,</p>
+    <p><span class="math display">\[\Delta L = \frac{FL}{AY}\]</span></p>
+    <p>Also, <span class="math display">\[r = a^x\]</span> can be written as <span class="math display">\[r = e^{x \ln a}\tag1\]</span></p>
+    <p>Elongation in infitesimally small cross section <span class="math display">\(dl\)</span>,</p>
+    <p><span class="math display">\[dl = \frac{Fdx}{\pi r^2 Y}\]</span></p>
+    <p><span class="math display">\[\Delta L = \frac{F}{\pi Y} \int_{1}^{r&#39;} \frac{dx}{r^2}\]</span></p>
+    <p>Substituing (1) and corresponding change of limits,</p>
+    <p><span class="math display">\[\Delta L = \frac{F}{\pi Y} \int_{0}^{L} \frac{dx}{(e^{x \ln a})^2}\]</span></p>
+    <p><span class="math display">\[\Delta L = \frac{F}{\pi Y} \left( \frac{-1}{2 \ln a} e^{-2x \ln a} \right) \Biggr|_{0}^{L}\]</span></p>
+    <p><span class="math display">\[\therefore \Delta L = \frac{F}{2 \pi Y \ln a} \left( 1 - e^{-2L \ln a} \right)\]</span></p>
+    <hr />
+    <p>It is interesting to note that if we let <span class="math display">\(L \to \infty\)</span>, assuming force <span class="math display">\(F\)</span> on the other end can still be applied, we get that <span class="math display">\(e^{-2L \ln a} \to 0\)</span>.</p>
+    <p><span class="math display">\[\implies \Delta L \Bigr|_{L = \infty} = \frac{F}{2 \pi Y \ln a}\]</span></p>
+    <p>So, for an infinitely large object, we can have finite elongation due to tensile forces. (Theoretically).</p>
+    <p>This is due to the fact that <span class="math display">\(e^x\)</span> rises rather rapidly. So, after some distance, we get that the cross sectional area <span class="math display">\(A\)</span> is much larger than the small <span class="math display">\(dx\)</span> at that point. And, as we know, <span class="math display">\(\Delta L \propto \frac{dx}{A}\)</span>. Hence we get this finite elongation.</p>
+    <hr />
+
+  </body>
+</html>
+<script type="text/javascript" src="../themeing.js"></script>

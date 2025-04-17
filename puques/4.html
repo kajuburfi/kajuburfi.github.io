@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../style.css" class="style">
+    <title>Question 4</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="center titleMain" id="titleMain">Question 4</div>
+      <div class="center quote" id="quote" style="cursor: auto;">A bizzare addition to the previous problem.</div>
+    </div>
+
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <h4 id="q4.-consider-the-previous-3d-shape.-assume-the-function-to-be-r-ex.-this-shape-is-rotated-with-constant-angular-velocity-omega-about-the-axis-touching-the-smaller-end.-find-elongation-delta-l.">Q4. Consider the previous 3D shape. Assume the function to be <span class="math display">\(r = e^x\)</span>. This shape is rotated with constant angular velocity <span class="math display">\(\omega\)</span> about the axis touching the smaller end. Find elongation <span class="math display">\(\Delta L\)</span>.</h4>
+    <hr />
+    <h4 id="idea">Idea:</h4>
+    <p>As in the figure, each part moves in a circle with corresponding radius <span class="math display">\(x\)</span>, and each part has tensile forces <span class="math display">\(T\)</span> and <span class="math display">\(T+dT\)</span> acting on both sides respectively. We shall first find the tension <span class="math display">\(T\)</span> as function of the distance from the axis <span class="math display">\(x\)</span>. Then, we shall use this to find elongation as in the previous question.</p>
+    <hr />
+    <h4 id="solution">Solution:</h4>
+    <p><img src="./docs/4_1.png" /></p>
+    <p>Since mass can’t be constant throughout, let us assume a constant volume mass density <span class="math display">\(\rho\)</span>. We have, <span class="math display">\[A = \pi r^2 = \pi e^{2x}\]</span></p>
+    <p>Balancing forces,</p>
+    <p><span class="math display">\[F = mR\omega^2\]</span></p>
+    <p><span class="math display">\[-dT = (\rho \pi e^{2x} dx)(x)(\omega^2)\]</span></p>
+    <p><span class="math display">\[\implies T = -\rho \pi \omega^2 \int_{L}^{x} x e^{2x} dx\]</span></p>
+    <p><span class="math display">\[T = -\rho \pi \omega^2 \left( \frac{x e^{2x}}{2} - \frac{e^{2x}}{4} \right) \Biggr|_{L}^{x}\]</span></p>
+    <p><span class="math display">\[T= \frac{\rho \pi \omega^2}{4} \left( 2(L e^{2L} - x e^{2x}) + e^{2x} - e^{2L} \right)\tag1\]</span></p>
+    <p>Now, we have,</p>
+    <p><span class="math display">\[dl = \frac{T dx}{\pi e^{2x} Y}\]</span></p>
+    <p>Substituting (1),</p>
+    <p><span class="math display">\[\implies \Delta L = \frac{\rho \pi \omega^2}{4 \pi Y} \int_{0}^{L} 2(L e^{2L - 2x} - x) + 1 - e^{2L-2x} dx\]</span></p>
+    <p>On simplification,</p>
+    <p><span class="math display">\[\therefore \Delta L = \frac{\rho \omega^2}{4 Y} \left( 1 - L \right) \left( 1 + L - e^{2L} \right)\]</span></p>
+    <hr />
+
+  </body>
+</html>
+<script type="text/javascript" src="../themeing.js"></script>

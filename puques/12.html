@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../style.css" class="style">
+    <title>Question 12</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="center titleMain" id="titleMain">Question 12</div>
+      <div class="center quote" id="quote" style="cursor: auto;">Some pressure!</div>
+    </div>
+
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <h4 id="q12.-find-the-force-of-water-on-a-conical-dam-as-shown-below.-take-the-density-to-be-rho.-half-angle-of-the-cone-is-phi.">Q12. Find the force of water on a conical dam as shown below. Take the density to be <span class="math display">\(\rho\)</span>. Half angle of the cone is <span class="math display">\(\phi\)</span>.</h4>
+    <hr />
+    <h4 id="idea">Idea:</h4>
+    <p>Consider an infinitesimal area <span class="math display">\(dA\)</span> as shown. On this area, due to pressure a force <span class="math display">\(\overrightarrow{dF}\)</span>.</p>
+    <p><span class="math display">\[\overrightarrow{dF} = P\overrightarrow{dA}\]</span></p>
+    <p>This force has 3 components. By careful observation, we can say that,</p>
+    <p><span class="math display">\[dF_x = dF \cos \phi \sin \theta\]</span></p>
+    <p><span class="math display">\[dF_y = dF \cos \phi \cos \theta\]</span></p>
+    <p><span class="math display">\[dF_z = dF \sin \phi\]</span></p>
+    <p><span class="math display">\[\hat{n} = \cos \phi \sin \theta \hat{i} + \cos \phi \cos \theta \hat{j} + \sin \phi \hat{k}\]</span></p>
+    <p>Some other trivial observations are,</p>
+    <p><span class="math display">\[{r \over l} = {R \over L} ( = \tan \phi)\]</span></p>
+    <p><span class="math display">\[h \buildrel \rm def  \over = R - r \cos \theta\]</span></p>
+    <p>Now, we have,</p>
+    <p><span class="math display">\[\overrightarrow{dF} = \rho g h (r d\theta dl) \hat{n}\]</span></p>
+    <p><span class="math display">\[= \rho g (R - r \cos \theta) ( r d \theta \csc \phi dr) \hat{n}\]</span></p>
+    <p>Integrating, we get,</p>
+    <p><span class="math display">\[\overrightarrow{F} = \rho g H R^2 \hat{i} + \rho g H R^2 {\pi \over 6} \hat{j} + \rho g R^3 {\pi \over 2} \hat{k}\]</span></p>
+    <p>Note that,</p>
+    <p><span class="math display">\[F_x = F_z = (\text{projected area})(\text{Pressure at mean height})\]</span></p>
+    <p><span class="math display">\[F_y = (\text{Weight of liquid displaced by body})\]</span></p>
+    <p>Which is generally true.</p>
+    <hr />
+
+  </body>
+</html>
+<script type="text/javascript" src="../themeing.js"></script>

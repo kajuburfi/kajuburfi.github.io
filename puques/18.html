@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../style.css" class="style">
+    <title>Question 18</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="center titleMain" id="titleMain">Question 18</div>
+      <div class="center quote" id="quote" style="cursor: auto;">Varying density</div>
+    </div>
+
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <h4 id="q-18.-find-the-variation-in-radius-and-density-of-a-small-sphere-of-initial-radius-r_0-and-its-bulk-modulus-being-beta-with-depth-in-a-liquid-giant-of-radius-r-and-constant-density-rho.">Q 18. Find the variation in radius and density of a small sphere of initial radius <span class="math display">\(r_0\)</span>, and its bulk modulus being <span class="math display">\(\beta\)</span>, with depth in a liquid giant of radius <span class="math display">\(R\)</span> and constant density <span class="math display">\(\rho\)</span>.</h4>
+    <hr />
+    <h4 id="idea">Idea:</h4>
+    <p align="center">
+    <img align="center" src="https://i.upmath.me/svg/%5Cbegin%7Btikzpicture%7D%5Bcolor%3Dwhite%5D%5Bthick%5D%0A%5Cdraw%20circle%20(2cm)%3B%0A%5Cdraw%5Bfill%3Dwhite%5D%20(2%2C0)%20circle%20(.2cm)%3B%0A%5Cdraw%5Bfill%3Dwhite%5D%20(1%2C0)%20circle%20(.16cm)%3B%0A%5Cdraw%20(0%2C0)%20--%20(-1%2C1.732)%3B%0A%5Cdraw%20(-.8%2C.866)%20node%20%7B%24R%24%7D%20(1%2C.4)%20node%20%7B%24r%24%7D%20(2.3%2C0.3)%20node%20%7B%24r_0%24%7D%3B%0A%5Cdraw%5Bcolor%3Dgreen%5D%20(-.7%2C-1)%20node%7B%24%5Crho%24%7D%3B%0A%5Cend%7Btikzpicture%7D%0A" alt="\begin{tikzpicture}[color=white][thick]
+    \draw circle (2cm);
+    \draw[fill=white] (2,0) circle (.2cm);
+    \draw[fill=white] (1,0) circle (.16cm);
+    \draw (0,0) -- (-1,1.732);
+    \draw (-.8,.866) node {$R$} (1,.4) node {$r$} (2.3,0.3) node {$r_0$};
+    \draw[color=green] (-.7,-1) node{$\rho$};
+    \end{tikzpicture}
+    " />
+    </p>
+    <p>As shown in diagram,</p>
+    <p>Let’s consider a general point at a radial distance <span class="math display">\(x\)</span> away from the centre of the giant. Let the sphere’s radius here be <span class="math display">\(r\)</span>.</p>
+    <p>By the definition of the bulk modulus, we have,</p>
+    <p><span class="math display">\[\beta = - { dP \over dV } V\]</span></p>
+    <p><span class="math display">\[\implies -dP = \beta {dV \over V}\]</span></p>
+    <hr />
+    <p>Here, we need to find gravitational pressure, <span class="math display">\(dP\)</span></p>
+    <p><span class="math display">\[dP = {dF \over A} = {I \rho dV \over A}\]</span></p>
+    <p>Here, <span class="math display">\(I\)</span> refers to the gravitational field due to the planet(within the planet), and <span class="math display">\(\rho\)</span> is its density.</p>
+    <p><span class="math display">\[dP = \frac{4}{3} \pi G \rho x \left( \rho \frac{dV}{A} \right)\]</span></p>
+    <p><span class="math display">\[\implies dP = \frac{4}{3} \pi G \rho^2 x \; dx\]</span></p>
+    <hr />
+    <p>Substituting this expression back and integrating with limits,</p>
+    <p><span class="math display">\[\int_R^x \frac{4}{3} \pi G \rho^2 x \; dx = \beta \int_{r_0}^r \frac{ 4 \pi r^2 \; dr }{\frac{4}{3} \pi r^3}\]</span></p>
+    <p>This gives,</p>
+    <p><span class="math display">\[r = r_0 e^{ { 2\pi G \rho^2 (x^2 - R^2) \over 3 \beta } }\]</span></p>
+    <p>Note that, <span class="math display">\(G \sim 10^{-11}\)</span> and <span class="math display">\(\beta \sim 10^{10}\)</span> for most materials.</p>
+    <p>The order of the exponent’s argument is around <span class="math display">\(10^{-21}\)</span>, which is clearly negligible.</p>
+    <p>Further,</p>
+    <p>Variation in density of the same body,</p>
+    <p>Say <span class="math display">\(\tilde{\rho}_s\)</span> is the initial density. Since mass is conserved here,</p>
+    <p><span class="math display">\[\tilde{\rho}_s V_i = \rho_s V_f\]</span></p>
+    <p>We get,</p>
+    <p><span class="math display">\[\rho_s = \tilde{\rho}_s e^{ { 2 \pi G \rho^2 (R^2 - x^2) \over \beta } }\]</span></p>
+    <hr />
+
+  </body>
+</html>
+<script type="text/javascript" src="../themeing.js"></script>

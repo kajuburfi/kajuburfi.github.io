@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../style.css" class="style">
+    <title>Question 16</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="center titleMain" id="titleMain">Question 16</div>
+      <div class="center quote" id="quote" style="cursor: auto;">Varying refractive indices</div>
+    </div>
+
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <h4 id="q-16.-find-the-equation-of-the-curve-that-light-traces-as-it-passes-from-vacuum-to-a-medium-of-variable-refractive-index-as-given-in-each-sub-part.">Q 16. Find the equation of the curve that light traces as it passes from vacuum to a medium of variable refractive index as given in each sub-part.</h4>
+    <hr />
+    <p>The equation of the curve so formed can be found by solving the simple, first order separable linear ODE:</p>
+    <p><span class="math display">\[{dy \over dx} = \sqrt{ \left(\frac{\eta(y)}{\eta_{out} \sin i}\right) - 1}\]</span></p>
+    <p>Where, <span class="math display">\(\eta(y)\)</span> is the refractive index as a function of height <span class="math display">\(y\)</span>, and <span class="math display">\(i\)</span> is the incident angle, a constant for a particular case. <span class="math display">\(\eta_{out}\)</span> is the (constant) refractive index of the medium from which light is incident onto the variable refractive index medium.</p>
+    <p>This can easily be derived by applying Snell’s law over an infinitesimal length.</p>
+    <hr />
+    <h4 id="a-etaeta__0-ealpha-y">(A): <span class="math display">\[\eta=\eta_{_0} e^{\alpha y}\]</span></h4>
+    <p>Here, <span class="math display">\(\eta_{_0}\)</span> and <span class="math display">\(\alpha\)</span> are constants that can be varied.</p>
+    <p>By integration, we arrive at:</p>
+    <p><span class="math display">\[x = \frac{1}{\alpha} \left( \tan^{-1} \left({\sqrt{\eta_{_0}^2 e^{2\alpha y} - \sin^2 i} \over \sin i } \right) - \tan^{-1} \left( {\sqrt{\eta_{_0}^2 - \sin^2 i} \over \sin i } \right) \right)\]</span></p>
+    <p>Graph(interactive): <br><iframe src="https://www.desmos.com/calculator/kf2x7sx22z?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe></p>
+    <hr />
+    <h4 id="b-eta-eta__0-1-over-y">(B): <span class="math display">\[\eta = \eta_{_0} {1 \over y}\]</span></h4>
+    <p>Here, <span class="math display">\(\eta_{_0}\)</span> is a constant.</p>
+    <p>We get,</p>
+    <p><span class="math display">\[(x \sin i - \eta_{_0})^2 + y^2 \sin^2 i=\eta_{_0}^2\]</span></p>
+    <p>Note that this is an equation of a circle. This indicates that the light ray undergoes TIR(Total Internal Reflection) at some point (the topmost point).</p>
+    <p>Graph(interactive): <br><iframe src="https://www.desmos.com/calculator/w4hgyjaejn?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe></p>
+    <hr />
+    <h4 id="c-eta-eta__0-yalpha">(C): <span class="math display">\[\eta = \eta_{_0} (y+\alpha)\]</span></h4>
+    <p>Here, <span class="math display">\(\eta_{_0}\)</span> and <span class="math display">\(\alpha\)</span> are constants. We need <span class="math display">\(\alpha\)</span> here because we can’t have <span class="math display">\(\eta\)</span> less than 1(can you guess why?)</p>
+    <p>We get,</p>
+    <p><span class="math display">\[x = {\sin i \over \eta_{_0} } \ln\left| 
+    {\sqrt{\eta_{_0}^2 (y+\alpha)^2 - \sin^2 i}  + \eta_{_0}(y+\alpha) \over 
+    \sqrt{\eta_{_0}^2 \alpha^2 - \sin^2 i}  + \eta_{_0}\alpha}
+    \right|
+    \]</span></p>
+    <p>Graph(interactive): <br><iframe src="https://www.desmos.com/calculator/iayaat3hhx?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe></p>
+    <hr />
+
+  </body>
+</html>
+<script type="text/javascript" src="../themeing.js"></script>

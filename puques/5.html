@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../style.css" class="style">
+    <title>Question 5</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="center titleMain" id="titleMain">Question 5</div>
+      <div class="center quote" id="quote" style="cursor: auto;">The thermal resistance offered by a hollow frustum.</div>
+    </div>
+
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <h4 id="q5.-a-frustum-is-made-with-inner-radius-a_1-and-outer-radius-a_2-on-the-short-end-and-radii-b_1-and-b_2-on-the-larger-side.-find-the-net-thermal-resistance-offered-by-the-hollow-frustum-if-its-total-length-is-l-and-thermal-conductivity-is-k.">Q5. A frustum is made with inner radius <span class="math display">\(a_1\)</span> and outer radius <span class="math display">\(a_2\)</span> on the short end, and radii <span class="math display">\(b_1\)</span> and <span class="math display">\(b_2\)</span> on the larger side. Find the net thermal resistance offered by the hollow frustum if its total length is <span class="math display">\(L\)</span> and thermal conductivity is <span class="math display">\(K\)</span>.</h4>
+    <h4 id="solution">Solution:</h4>
+    <p><img src="./docs/5_1.png" /> <img src="./docs/5_2.png" /></p>
+    <p>From the diagram,</p>
+    <p><span class="math display">\[b = a + L \tan \theta\]</span></p>
+    <p><span class="math display">\[\tan \theta = \frac{b-a}{L} = \frac{b}{L+d}\]</span></p>
+    <p>Cross sectional area,</p>
+    <p><span class="math display">\[A = \frac{\pi b (L + d)}{\cos \theta} - \frac{\pi a d}{\cos \theta}\]</span></p>
+    <p><span class="math display">\[\implies A = \frac{\pi L }{ \cos \theta} (2a + L \tan \theta)\]</span></p>
+    <p>Substituting this into (1),</p>
+    <p><span class="math display">\[dR = \frac{L}{KA} = \frac{da}{K\pi L ( 2a + L \tan \theta )}\]</span></p>
+    <p><span class="math display">\[\int dR = \frac{1}{K \pi L} \int_{a_1}^{a_2} \frac{da}{2a + L \tan \theta}\]</span></p>
+    <p>Substituting the value of <span class="math display">\(\tan \theta\)</span>,</p>
+    <p><span class="math display">\[\therefore R = \frac{1}{2 \pi K L } \ln \left( \frac{a_2 + b_2}{a_1 + b_1} \right)\]</span></p>
+    <hr />
+    <p>Here, we note that unlike regular conductors, this one is inversely proportional to the length <span class="math display">\(L\)</span>.</p>
+    <hr />
+
+  </body>
+</html>
+<script type="text/javascript" src="../themeing.js"></script>
