@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <link rel="stylesheet" href="../style.css" class="style">
+  <title>Kaju Burfi</title>
+</head>
+
+<body>
+  <div class="topnav">
+    <a href="../index.html">Homepage</a>
+    <a href="../puques/index.html">Questions</a>
+    <a class="split" id="themeButton"></a>
+  </div>
+  <div class="container">
+    <div class="center disable-select titleMain mode" id="titleMain">Kaju Burfi</div>
+
+    <div class="center disable-select quote" id="quote" onclick="addQuote()"></div>
+
+    <div class="center disable-select aboutMe" id="aboutMe">
+      <h3 class="sub_header">Your clue!</h3>
+      <p>
+      <i>Die Wissenschaft des Mudra</i> <br>
+      What might this mean?
+      </p>
+    </div>
+
+    <div class="footer center disable-select">
+      <a class="footerItem" href="https://github.com/kajuburfi">Github</a>
+      <!-- <a class="footerItem" href="mailto:tejasgudgunti@gmail.com">Gmail</a> -->
+    </div>
+  </div>
+  <p class="lastEdited" id="last_edited">Last Edited: </p>
+
+  <!-- Script written by python128 -->
+  <script type="text/javascript" src="../quotes.js"></script>
+  <script type="text/javascript" src="../themeing.js"></script>
+  <script>
+    //Script to fetch quotes.
+    function addQuote() {
+      document.getElementById("quote").innerHTML = "";
+      var quote = "";
+      var i = 0;
+      const speed = 30;
+      function quoteWriter() {
+        if (i <= quote.length) {
+          document.getElementById("quote").innerHTML += quote.charAt(i);
+          i++;
+          setTimeout(quoteWriter, speed);
+        }
+      }
+
+      const randNo = Math.floor(Math.random() * data.length);
+      var quote = data[randNo].quoteText;
+      quoteWriter();
+    }
+    addQuote();
+
+
+    // Add last-edited to the page
+    const date = new Date(document.lastModified);
+    // (WEEKDAY) Month date year
+    // (FRI) Apr 09 2025
+    const toBePrinted = "("+date.toString().split(' ').slice(0, 4).toString().replace(",", ") ").replaceAll(",", " "); 
+    document.getElementById("last_edited").innerHTML += toBePrinted;
+  </script>
+</body>
+
+</html>
