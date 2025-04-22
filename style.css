@@ -388,7 +388,7 @@ code {
     'quote quote'
     'aboutMe aboutMe'
     'contentBoxL contentBoxR'
-    '. .'
+    'contentBoxL2 contentBoxR2'
     'footer footer';
 }
 
@@ -446,9 +446,9 @@ code {
 }
 
 .contentBoxL {
-  width: fit-content;
+  width: 100%;
   height: fit-content;
-  max-width: 80%;
+  max-width: 90%;
   justify-self: center;
   text-align: center;
   grid-area: contentBoxL;
@@ -458,9 +458,9 @@ code {
   transition: all .4s;
 }
 .contentBoxR {
-  width: fit-content;
+  width: 100%;
   height: fit-content;
-  max-width: 80%;
+  max-width: 90%;
   justify-self: center;
   text-align: center;
   grid-area: contentBoxR;
@@ -469,7 +469,35 @@ code {
   padding: 10px;
   transition: all .4s;
 }
-.contentBoxL:hover, .contentBoxR:hover {
+.contentBoxL2 {
+  width: 100%;
+  height: fit-content;
+  max-width: 90%;
+  justify-self: center;
+  text-align: center;
+  grid-area: contentBoxL2;
+  border: 1px solid var(--text);
+  border-radius: 10px;
+  padding: 10px;
+  transition: all .4s;
+}
+.contentBoxR2 {
+  width: 100%;
+  height: fit-content;
+  max-width: 90%;
+  justify-self: center;
+  text-align: center;
+  grid-area: contentBoxR2;
+  border: 1px solid var(--text);
+  border-radius: 10px;
+  padding: 10px;
+  transition: all .4s;
+}
+
+.contentBoxL:hover, 
+.contentBoxL2:hover, 
+.contentBoxR2:hover, 
+.contentBoxR:hover {
   border: 1px solid var(--flamingo);
   cursor: pointer;
 }
@@ -478,7 +506,10 @@ code {
   transition: color .4s;
 }
 
-.contentBoxL:hover .sub_header, .contentBoxR:hover .sub_header {
+.contentBoxL:hover .sub_header, 
+.contentBoxL2:hover .sub_header, 
+.contentBoxR2:hover .sub_header, 
+.contentBoxR:hover .sub_header {
   color: var(--yellow);
 }
 .aboutMe:hover .sub_header {
@@ -533,6 +564,7 @@ code {
   border: 1px solid var(--text);
   border-radius: 10px;
   padding: 10px;
+  margin-top: 10px;
   transition: all .4s;
 }
 
