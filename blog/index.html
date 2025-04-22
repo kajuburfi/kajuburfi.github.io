@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico?"/>
+  <link rel="stylesheet" href="../style.css" class="style">
+  <title>Kaju Burfi's Blog</title>
+</head>
+
+<body>
+  <div class="topnav">
+    <a href="../index.html">Homepage</a>
+    <a class="split" id="themeButton"></a>
+  </div>
+  <div class="container">
+    <div class="center disable-select titleMain mode" id="titleMain">Kaju Burfi's Blog</div>
+
+    <div class="center disable-select aboutMe" id="aboutMe">
+      <h3 class="sub_header">Blogging</h3>
+      This is a bunch of blogs written by me. This is mostly for me to reflect on, later in life. 
+      They are written as and when I feel they need to be written, so it has no definite pattern.
+    </div>
+  </div>
+
+  <h1>Recent Blogs</h1>
+
+  <a href="./2025-04-22-life-lessons.html">
+  <div class="blogPostCard">
+    <div class="topRight">22<sup>nd</sup> April, 2025</div>
+    <div class="title"> A couple Life Lessons </div>
+    <p>A blog about some things that I learnt when talking with my parents about my future career choice - Science or 
+    Engineering?</p>
+  </div>
+  </a>
+
+  <p class="lastEdited" id="last_edited">Last Edited: </p>
+
+  <!-- Script written by python128 -->
+  <script type="text/javascript" src="../themeing.js"></script>
+  <script>
+    // Add last-edited to the page
+    const date = new Date(document.lastModified);
+    // (WEEKDAY) Month date year
+    // (FRI) Apr 09 2025
+    const toBePrinted = "("+date.toString().split(' ').slice(0, 4).toString().replace(",", ") ").replaceAll(",", " "); 
+    document.getElementById("last_edited").innerHTML += toBePrinted;
+  </script>
+</body>
+
+</html>
