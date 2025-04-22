@@ -526,6 +526,35 @@ code {
   color: var(--overlay1);
 }
 
+.blogPostCard {
+  width: 100%;
+  justify-self: center;
+  border: 1px solid var(--text);
+  border-radius: 10px;
+  padding: 10px;
+  transition: all .4s;
+}
+
+.blogPostCard .topRight {
+  float: right;
+  color: var(--sapphire);
+}
+
+.blogPostCard .title {
+  color: var(--mauve);
+  font-family: "Playfair Display", "Nunito", "Times New Roman", Helvetica;
+  padding: 5px;
+  font-size: 1.5rem;
+}
+
+.blogPostCard p {
+  margin-left: 30px;
+}
+
+.blogPostCard:hover {
+  border: 1px solid var(--yellow);
+}
+
 @media (min-width: 500px) {
   .help {
     display: flex;
