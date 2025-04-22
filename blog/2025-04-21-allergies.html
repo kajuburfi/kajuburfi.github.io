@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico?"/>
+  <link rel="stylesheet" href="../style.css" class="style">
+  <title>Kaju Burfi's Blog</title>
+</head>
+
+<body>
+  <div class="topnav">
+    <a href="../index.html">Homepage</a>
+    <a href="./index.html">Blogs</a>
+    <a class="split" id="themeButton"></a>
+  </div>
+  <div class="container">
+    <div class="center disable-select titleMain mode" id="titleMain">Allergies</div>
+
+    <div class="center disable-select aboutMe" id="aboutMe">
+      <h3 class="sub_header">21<sup>st</sup> April, 2025</h3>
+      I recently learned about my allergies…
+    </div>
+  </div>
+
+  <h1 id="allergies-what-are-they">Allergies, what are they?</h1>
+  <p>When your body detects a foriegn item entering, it might mistake it to be harmful, called an <em>allergen</em>. This causes your body to have an <em>allergic reaction</em> to it, which might be just irritable(like itching/rashes), or something more severe(like <em>anaphylaxis</em>). There are a variety of things that may cause an allergy.</p>
+  <p>Most allergies(like milk, nuts, etc) develop within 6-8 months after being born. Some others, your body may become allergic after a while. Some of the reactions may occur only when something else is also happening at the same time (such other things are called <em>co-factors</em>).</p>
+  <h1 id="what-have-i-got">What have I got?</h1>
+  <p>I mainly have an allergy to a specific protein called <em>profilin</em>. It is mainly present in some seafoods(like oyster), and also in melons. But I have eaten melons before, so the doctor said it might have been a cross-contamination. I am also allergic to certain types of pollen, mainly found in the West, which also majorly contain <em>profilin</em>. Another item that contains <em>profilin</em> is latex. So I must avoid latex gloves, and request any doctor (during checkups) to avoid the same. Alternatives are nitrile or vinyl gloves.</p>
+  <p>Previously I had known that I had an allergy to <em>Amoxicillin</em>, which belongs to the Penicillin class. I had gotten rashes for a month the last(and only) time I had taken <em>Amoxicillin</em>.</p>
+  <p>The reaction that occurs is called <em>anaphyalxis</em>. According to my doctor, what I have is not very severe, since only one “system” is reacting - I feel drowsy and feverish for about 5 min, and then I’m back to normal. I don’t have any rashes nor foaming near the mouth nor becoming unconscious.</p>
+  <p>The doctor has advised me to avoid seafood. Melons are okay, since I have eaten them before, and there is no reaction to it. She has given an emergency Epinephrine/Adrenaline injection, which is to injected in a severe case. The injection has to stored in the fridge(not freezer), and has a shelf life of 6 months. We can also use an Epi-pen, but those are unnecessarily expensive(over Rs 10,000 compared to Rs.250). In slightly less intense reactions, I have to take a pill(<em>levocet</em> and <em>ivepred</em>), which are anti-histamines. They have a shelf life of around 3 years.</p>
+  <h1 id="conclusion">Conclusion</h1>
+  <p>Everyone has allergies. It’s better to know them, and avoid them, rather than to experience it.</p>
+
+  <p class="lastEdited" id="last_edited">Last Edited: </p>
+
+  <!-- Script written by python128 -->
+
+  <!-- Syntax highlighting -->
+  <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.3.1/styles/github-dark-dimmed.min.css" />
+  <script src="https://unpkg.com/@highlightjs/cdn-assets@11.3.1/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+  <script> hljs.highlightAll(); </script>
+
+  <script type="text/javascript" src="../themeing.js"></script>
+  <script>
+    // Add last-edited to the page
+    const date = new Date(document.lastModified);
+    // (WEEKDAY) Month date year
+    // (FRI) Apr 09 2025
+    const toBePrinted = "("+date.toString().split(' ').slice(0, 4).toString().replace(",", ") ").replaceAll(",", " "); 
+    document.getElementById("last_edited").innerHTML += toBePrinted;
+  </script>
+</body>
+
+</html>
