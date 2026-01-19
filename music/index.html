@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <link rel="stylesheet" href="../style.css" class="style">
+  <title>Kaju Burfi</title>
+</head>
+
+<body>
+  <div class="topnav">
+    <a href="../index.html">Homepage</a>
+    <!-- <a href="../puques/index.html">Questions</a> -->
+    <a class="split" id="themeButton"></a>
+  </div>
+
+  <div class="container">
+    <div class="center disable-select titleMain mode" id="titleMain">My Music</div>
+
+    <div class="center disable-select quote" id="quote" onclick="addQuote()"></div>
+  </div>
+
+  <h1> My Original Compositions </h1>
+
+  These are some of my original compositions, arranged chronologically. 
+
+  <ol>
+    <li>
+      <a href="https://www.youtube.com/watch?v=301AnxXkVG4"> On The Way </a>: This is my first OC, played entirely on one guitar, with a clean guitar tone.
+      It's composed in the key of A Major, with a basic I-iii-ii-IV chord progression, giving a plagal cadence, with a catchy ostinato being the same baseline. The chords are
+      major or minor sevenths, and sometimes ninths. It is played with some swing, giving a laid back feel.
+      <br>
+      <a href="./files/On_The_Way.pdf">Here</a> is the sheet music for the same.
+    </li>
+  </ol>
+
+  <div class="footer center disable-select">
+    <a class="footerItem" href="https://github.com/kajuburfi">Github</a>
+    <!-- <a class="footerItem" href="mailto:tejasgudgunti@gmail.com">Gmail</a> -->
+  </div>
+  <p class="lastEdited" id="last_edited">Last Edited: </p>
+
+  <!-- Script written by python128 -->
+  <script type="text/javascript" src="../quotes.js"></script>
+  <script type="text/javascript" src="../themeing.js"></script>
+  <script>
+    //Script to fetch quotes.
+    function addQuote() {
+      document.getElementById("quote").innerHTML = "";
+      var quote = "";
+      var i = 0;
+      const speed = 30;
+      function quoteWriter() {
+        if (i <= quote.length) {
+          document.getElementById("quote").innerHTML += quote.charAt(i);
+          i++;
+          setTimeout(quoteWriter, speed);
+        }
+      }
+
+      const randNo = Math.floor(Math.random() * data.length);
+      var quote = data[randNo].quoteText;
+      quoteWriter();
+    }
+    addQuote();
+
+
+    // Add last-edited to the page
+    const date = new Date(document.lastModified);
+    // (WEEKDAY) Month date year
+    // (FRI) Apr 09 2025
+    const toBePrinted = "("+date.toString().split(' ').slice(0, 4).toString().replace(",", ") ").replaceAll(",", " "); 
+    document.getElementById("last_edited").innerHTML += toBePrinted;
+  </script>
+</body>
+
+</html>
