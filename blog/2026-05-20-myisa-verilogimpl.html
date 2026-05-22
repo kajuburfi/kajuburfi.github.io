@@ -17,7 +17,7 @@
     <a class="split" id="themeButton"></a>
   </div>
   <div class="container">
-    <div class="center disable-select titleMain mode" id="titleMain"><code>myisa</code> SystemVerilog implementation</div>
+    <div class="center disable-select titleMain mode" id="titleMain"><code>myisa</code> implementation</div>
 
     <div class="center disable-select aboutMe" id="aboutMe">
       <h3 class="sub_header">20<sup>th</sup> May, 2026</h3>
@@ -35,7 +35,7 @@
   <h2 id="single-cycle-myisa-design">Single Cycle <code>myisa</code> Design</h2>
   <p>Here is what I designed, very roughly, on paper.</p>
   <figure>
-  <img src="./md_files/docs/img.jpg" alt="" /><figcaption>Single Cycle myisa design</figcaption>
+  <img src="./md_files/docs/img.jpg" alt="" style="width: 100%; height: auto;" />
   </figure>
   <p>This diagram closely resembles a MIPS single cycle processor in Harris and Harris’ <a href="https://unidel.edu.ng/focelibrary/books/Digital%20Design%20and%20Computer%20Architecture%20(Harris,%20Sarah,%20Harris,%20David)%20(Z-Library).pdf">Digital Design and Computer Architecture</a>. Since I have separate instruction and data memories, this would technically be of Harvard Architecture, which is not according to <code>myisa</code>, but I later change this to a unified memory in my pipeline, making it Von Neumann. I have changed a bunch of data wire and control signal names, because I feel those would be of better naming choice(to each their own, I guess). Following this nomenclature, I choose to prefix all control signals with <code>is_</code>, which generally implies a binary signal of true/false. For control signals that are vectors, they are prefixed with <code>ctrl_</code> to indicate that it is a control signal. In my opinion, I feel this would make each wire and its purpose a lot clearer than what it was in Harris and Harris. Some other short forms/wire names that I’ve used are as follows:</p>
   <ul>
@@ -45,7 +45,7 @@
   <li>dmem: Data Memory</li>
   <li>instr: instruction</li>
   <li>imm: immediate</li>
-  <li>A<sub>i<sub>: Inputs to blocks</li>
+  <li>A<sub>i</sub>: Inputs to blocks</li>
   <li>RI: Read Instruction</li>
   <li>RR: Read Register</li>
   <li>RM: Read Memory</li>
@@ -75,21 +75,21 @@
   <h2 id="pipelined-implementation-in-systemverilog">Pipelined implementation in SystemVerilog</h2>
   <p>I hadn’t implemented any pipelined processor before. Hence, this was a new challenge. My initial thought was to just sketch out the pipelined processor, i.e. just put a bunch of pipeline registers between the necessary stages(which I get to decide, of course), and write out the verilog code for that. So… That’s what I did. Here’s the sketch:</p>
   <figure>
-  <img src="./md_files/docs/myisa_pipelined_basic.png" alt="" /><figcaption>Basic Pipeline</figcaption>
+  <img src="./md_files/docs/myisa_pipelined_basic.png" alt="" style="width: 100%; height: auto;" />
   </figure>
   <p>So, I made a file, <code>pipeline_regs.sv</code>, and filled it with D flip flops that do exactly what is shown here. It’s a very lengthy, but simple process.</p>
   <p>Now, if we run the processor and open the dump file with gtkwave, we see the pipeline working as it should. But, we have a bunch of hazards that need some fixing. Hence, we get the next iteration, Pipeline with Forwarding:</p>
   <figure>
-  <img src="./md_files/docs/myisa_pipelined_fwd.png" alt="" /><figcaption>Pipeline with forwarding</figcaption>
+  <img src="./md_files/docs/myisa_pipelined_fwd.png" alt="" style="width: 100%; height: auto;" />
   </figure>
   <p>This adds a <em>Hazard Unit</em> at the bottom, which encompasses all stages. I pull the necessary wires from each stage, and add the muxers required to accomplish the forwarding. And, this more or less works. Next, we need stalls(in the case of <code>lw</code> - load word, which requires an extra cycle for fetching):</p>
   <figure>
-  <img src="./md_files/docs/myisa_pipelined_stall.png" alt="" /><figcaption>Pipeline with fwding and stalls</figcaption>
+  <img src="./md_files/docs/myisa_pipelined_stall.png" alt="" style="width: 100%; height: auto;" />
   </figure>
   <p>Here, we add another mux, pull a couple more wires, and add Enable and Synchronous Reset terminals to the pipeline registers. This now allows us to control stalling(and one flush required along with that).</p>
   <p>So far so good. Up till now, I had been more or less following <em>Harris and Harris</em>’s book, and used very similar logic. But, for the control hazard case, it was just not working! I tried again and again and again. I ended up spending over a week just on this; trying out different combinations, different cases, working out the logic behind each specific case, etc. At one point, I was able to get one specific <code>.asm</code> program working(that specific set and order of instructions), but another would fail, and when I fixed that one, the previous one would stop working. It was annoying, but I finally managed to get the whole thing put together. And here we have our final <em>(?)</em> processor:</p>
   <figure>
-  <img src="./md_files/docs/myisa_pipelined_ctrl_hazard_fix.png" alt="" /><figcaption>Final? processor</figcaption>
+  <img src="./md_files/docs/myisa_pipelined_ctrl_hazard_fix.png" alt="" style="width: 100%; height: auto;" />
   </figure>
   <h2 id="final-thoughts">Final Thoughts</h2>
   <p>As a whole, doing this has totally opened my view on computer architecture, and how processors actually work. The way we learn from reading books has little to do with actually implementing, even if as a simulation, a processor. Honestly, I feel like making up my own ISA made it simpler for me to design this, since I could make any architectural choice I wanted, with the only downside being that it would come back to bite me later. The joy of seeing your own little machine(<em>simulation</em>) actually give workable results is amazing!</p>
