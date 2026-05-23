@@ -588,6 +588,37 @@ code {
   border: 1px solid var(--yellow);
 }
 
+.TILPostCard {
+  width: 75%;
+  justify-self: center;
+  justify-content: center;
+  border: 1px solid var(--text);
+  border-radius: 10px;
+  padding: 10px;
+  margin: 0 auto 10px auto;
+  transition: all .4s;
+}
+
+.TILPostCard .topRight {
+  float: right;
+  color: var(--sapphire);
+}
+
+.TILPostCard .title {
+  color: var(--mauve);
+  font-family: "Playfair Display", "Nunito", "Times New Roman", Helvetica;
+  padding: 5px;
+  font-size: 1.5rem;
+}
+
+.TILPostCard p {
+  margin-left: 30px;
+}
+
+.TILPostCard:hover {
+  border: 1px solid var(--yellow);
+}
+
 @media (min-width: 500px) {
   .help {
     display: flex;
