@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico?"/>
+  <link rel="stylesheet" href="../style.css" class="style">
+  <title>TIL</title>
+</head>
+
+<body>
+  <div class="topnav">
+    <a href="../index.html">Homepage</a>
+    <a class="split" id="themeButton"></a>
+  </div>
+  <div class="container">
+    <div class="center disable-select titleMain mode" id="titleMain">Kaju Burfi's TIL</div>
+
+    <div class="center disable-select aboutMe" id="aboutMe">
+      <h3 class="sub_header">Today I Learned</h3>
+      As and when I learn something new, typically computer oriented, I'll update it here
+      with a new TIL so that I can refer back to this whenever required.
+    </div>
+  </div>
+
+  <div class="TILPostCard">
+    <div class="topRight">2026-05-20</div>
+    <div class="title">RGB lighting control for HP Omen</div>
+    <p>This <a href="https://github.com/OmenLinux/omen-rgb-keyboard">repo</a> is a very good source for using RGB colors(and
+    dynamic modes) on your HP Omen laptop.<br> It's amazing! We can control basically every part that we could with Windows, but
+    in Linux. Further, it's great for scripting. So, for instance, I can make my keyboard blink deep red rapidly if the CPU Utilization
+    is above a certain amount.</p>
+  </div>
+
+  <p class="lastEdited" id="last_edited">Last Edited: </p>
+
+  <!-- Script written by python128 -->
+  <script type="text/javascript" src="../themeing.js"></script>
+  <script>
+    // Add last-edited to the page
+    const date = new Date(document.lastModified);
+    // (WEEKDAY) Month date year
+    // (FRI) Apr 09 2025
+    const toBePrinted = "("+date.toString().split(' ').slice(0, 4).toString().replace(",", ") ").replaceAll(",", " "); 
+    document.getElementById("last_edited").innerHTML += toBePrinted;
+  </script>
+</body>
+
+</html>
