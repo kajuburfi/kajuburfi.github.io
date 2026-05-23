@@ -27,8 +27,40 @@
 
   <div class="TILPostCard">
     <div class="topRight">2026-05-23</div>
-    <div class="title">Just a test.</div>
-    <p>Testing.</p>
+    <div class="title">Scripting for TILs(awk and sed)</div>
+    <p>
+    To simplify making my TILs, I made this small script. It basically opens the HTML file that
+    contains this page, pre-fills it in with some data(like date and basic syntax), so all I have to do
+    is just write out what I learned today. Like I'm doing right now.
+
+    I also learned that we should use <code>& lt;</code> and <code>& gt;</code>(but without the space) when using "<" and ">" in html code for it to be displayed.
+    <pre><code class="lang-bash">
+#!/usr/bin/zsh
+
+TIL_file=~/repos/kajuburfi.github.io/til/index.html
+
+line_to_enter=$(awk '/TILPostCard/ {print NR; exit}' $TIL_file)
+
+text="\ \ &lt;div class=\"TILPostCard\"&gt;\n    &lt;div class=\"topRight\"&gt;$(date -u +%Y-%m-%d)&lt;/div&gt;\n    &lt;div class=\"title\"&gt;&lt;/div&gt;\n    &lt;p&gt;&lt;/p&gt;\n  &lt;/div&gt;\n"
+
+sed -i "$((line_to_enter))i $text" $TIL_file
+
+line_to_type=$(awk '/&lt;p&gt;&lt;\/p&gt;/ {print NR; exit}' $TIL_file)
+
+hx $TIL_file:$line_to_type:8
+
+echo -n "Push to GitHub?[Y/n]: "
+read confirm
+if [ "$confirm" = "Y" ]; then
+  cd ~/repos/kajuburfi.github.io/til
+  git add index.html
+  git commit -m "Add new TIL"
+  git push
+else
+  echo "Not pushing."
+fi
+    </pre></code>
+    </p>
   </div>
 
   <div class="TILPostCard">
@@ -43,6 +75,11 @@
   <p class="lastEdited" id="last_edited">Last Edited: </p>
 
   <!-- Script written by python128 -->
+  <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.3.1/styles/github-dark-dimmed.min.css" />
+  <script src="https://unpkg.com/@highlightjs/cdn-assets@11.3.1/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+  <script> hljs.highlightAll(); </script>
+
   <script type="text/javascript" src="../themeing.js"></script>
   <script>
     // Add last-edited to the page
